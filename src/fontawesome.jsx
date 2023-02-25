@@ -14,9 +14,11 @@ import {
   faTrashCan,
   faHighlighter,
   faLayerGroup,
+  faFont,
+  faToggleOn,
 } from '@fortawesome/free-solid-svg-icons';
 
-import { faSquarePlus } from '@fortawesome/free-regular-svg-icons';
+import { faSquarePlus, faSquare } from '@fortawesome/free-regular-svg-icons';
 
 library.add(
   faDesktop,
@@ -32,4 +34,7 @@ library.add(
   faHighlighter,
   faLayerGroup,
   faSquarePlus,
+  faSquare,
+  faFont,
+  faToggleOn,
 );

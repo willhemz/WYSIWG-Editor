@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 
 export const CanvasPage = styled.section`
-  grid-column-start: span 4;
+  grid-column-start: span 25;
   height: 50rem;
-  border: 2px dashed #4d0000;
-  border-bottom: 0;
-  border-left: 0;
+  background: rgba(230, 222, 222, 0.4);
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    scroll-behavior: smooth;
+  }
+  ::-webkit-scrollbar-thumb {
+  }
+  ::-webkit-scrollbar-track {
+  }
 `;
 
 export const CanvasBox = styled.canvas`
