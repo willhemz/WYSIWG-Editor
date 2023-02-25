@@ -37,7 +37,7 @@ const Navbar = () => {
         <Section variant='management'>
           {icons.slice(10, 13).map(({ id, title, icon }) => {
             return (
-              <IconBtn key={id}>
+              <IconBtn key={id} variant='iconMgt'>
                 <FontAwesomeIcon title={title} icon={icon} />
               </IconBtn>
             );

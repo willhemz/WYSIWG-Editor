@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar } from './Layers';
+import { Main, Navbar } from './Layers';
 import styled from 'styled-components';
 import './fontawesome';
 
@@ -7,6 +7,7 @@ const App = () => {
   return (
     <Container>
       <Navbar />
+      <Main />
     </Container>
   );
 };
@@ -14,8 +15,7 @@ const App = () => {
 export default App;
 
 const Container = styled.div`
-  max-width: 2050px;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   padding: 0;
   margin: 0;

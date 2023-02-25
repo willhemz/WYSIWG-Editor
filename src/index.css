@@ -15,12 +15,11 @@
 body {
   font-family: 'Noto Sans', sans-serif;
   font-size: 62.5%;
+  width: 100%;
+  max-width: 2050px;
 }
 
-::-webkit-scrollbar {
-  scroll-behavior: smooth;
-  scrollbar-width: 5px;
-}
+
 
 a, button {
   text-decoration: none;

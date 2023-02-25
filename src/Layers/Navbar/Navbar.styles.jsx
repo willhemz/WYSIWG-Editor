@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const NavMenu = styled.header`
-  max-width: 100vw;
   width: 100%;
   height: 6rem;
   background: #fff;
@@ -10,8 +9,7 @@ export const NavMenu = styled.header`
 `;
 
 export const Header = styled.nav`
-  background: linear-gradient(to right, #ffffff 0%, #ffcccc 100%);
-  color: hsl(330, 100%, 20%);
+  color: rgb(73, 25, 15);
   width: 100%;
   height: 55%;
   display: flex;
@@ -19,6 +17,7 @@ export const Header = styled.nav`
   font-size: 1.5rem;
   line-height: 2rem;
   padding: 0 1.5rem;
+  box-shadow: 0 2px 3px 0px rgba(204, 204, 204, 0.3);
 `;
 
 export const Title = styled.div`
@@ -53,11 +52,11 @@ export const Section = styled.article`
       : variant === 'management'
       ? 'space-around'
       : 'flex-start'};
-  background: ${({ variant }) => variant === 'management' && '#4d0000'};
+  background: ${({ variant }) => variant === 'management' && 'rgb(73, 25, 15)'};
 `;
 
 export const IconBtn = styled.button`
-  color: hsl(10, 50%, 70%);
+  color: ${({ variant }) => (variant === 'iconMgt' ? '#fff' : 'rgb(73, 25, 15)')};
   font-size: 1rem;
   border: none;
 `;
