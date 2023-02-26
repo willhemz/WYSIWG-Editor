@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text } from './Text.styles';
 
-const TextComponent = ({ text, ...props }) => {
-  return <Text {...props}>{text}</Text>;
+const TextComponent = ({ children, ...props }) => {
+  return <Text {...props}>{children}</Text>;
 };
 
 export default TextComponent;

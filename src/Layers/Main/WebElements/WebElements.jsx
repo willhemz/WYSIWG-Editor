@@ -6,8 +6,18 @@ const WebElements = () => {
   return (
     <Tools>
       <List>
-        <Button>
+        <Button variant='container'>
           <FontAwesomeIcon title='container' icon='fa-regular fa-square' />
+        </Button>
+      </List>
+      <List>
+        <Button variant='article'>
+          <FontAwesomeIcon title='article' icon='fa-regular fa-square' />
+        </Button>
+      </List>
+      <List>
+        <Button variant='div'>
+          <FontAwesomeIcon title='div' icon='fa-solid fa-expand' />
         </Button>
       </List>
       <List>
@@ -18,6 +28,11 @@ const WebElements = () => {
       <List>
         <Button>
           <FontAwesomeIcon title='button' icon='fa-solid fa-toggle-on' />
+        </Button>
+      </List>
+      <List>
+        <Button>
+          <FontAwesomeIcon title='button' icon='fa-regular fa-image' />
         </Button>
       </List>
     </Tools>

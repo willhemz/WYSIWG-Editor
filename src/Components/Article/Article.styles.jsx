@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Main = styled.section`
+export const ArticleType = styled.article`
   width: ${(props) => (props.width ? `${props.width}${props.unit}` : '100%')};
   height: ${(props) => (props.height ? `${props.height}${props.unit}` : 'auto')};
   background: ${(props) => (props.background ? props.background : 'transparent')};
