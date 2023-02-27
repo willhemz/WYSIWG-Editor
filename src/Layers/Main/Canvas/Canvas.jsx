@@ -23,12 +23,9 @@ const Canvas = (props) => {
                 padding='5px 10px'
                 color='rgba(0,0,0,0.7)'
                 height='100px'
-              >
-                DEXLA.IO
-              </TextComponent>
-              <TextComponent fontSize='24'>
-                Build your web applications without coding...
-              </TextComponent>
+                text='DEXLA.IO'
+              />
+              <TextComponent fontSize='24' text='Build your web applications without coding...' />
             </Element>
             <Element
               is={ArticleComponent}
@@ -37,9 +34,11 @@ const Canvas = (props) => {
               height='200'
               unit='px'
             >
-              <TextComponent color='#f1f1f1' fontSize='18'>
-                Easily drag and drop web elements on the canvas and customise as you desire...
-              </TextComponent>
+              <TextComponent
+                color='#f1f1f1'
+                fontSize='18'
+                text='Easily drag and drop web elements on the canvas and customise as you desire...'
+              />
               <Element
                 is={DivComponent}
                 canvas
@@ -51,33 +50,23 @@ const Canvas = (props) => {
               >
                 <DivComponent display='flex' color='white' alignItems='center'>
                   <FontAwesomeIcon icon='fa-solid fa-check' />
-                  <TextComponent color='white' fontSize='20'>
-                    Container
-                  </TextComponent>
+                  <TextComponent color='white' fontSize='20' text='Container' />
                 </DivComponent>
                 <DivComponent display='flex' color='white' alignItems='center'>
                   <FontAwesomeIcon icon='fa-solid fa-check' />
-                  <TextComponent color='white' fontSize='20'>
-                    Article
-                  </TextComponent>
+                  <TextComponent color='white' fontSize='20' text='Article' />
                 </DivComponent>
                 <DivComponent display='flex' color='white' alignItems='center'>
                   <FontAwesomeIcon icon='fa-solid fa-check' />
-                  <TextComponent color='white' fontSize='20'>
-                    Div
-                  </TextComponent>
+                  <TextComponent color='white' fontSize='20' text='Div' />
                 </DivComponent>
                 <DivComponent display='flex' color='white' alignItems='center'>
                   <FontAwesomeIcon icon='fa-solid fa-check' />
-                  <TextComponent color='white' fontSize='20'>
-                    Text
-                  </TextComponent>
+                  <TextComponent color='white' fontSize='20' text='Text' />
                 </DivComponent>
                 <DivComponent display='flex' color='white' alignItems='center'>
                   <FontAwesomeIcon icon='fa-solid fa-check' />
-                  <TextComponent color='white' fontSize='20'>
-                    Image
-                  </TextComponent>
+                  <TextComponent color='white' fontSize='20' text='Image' />
                 </DivComponent>
               </Element>
             </Element>
@@ -95,9 +84,8 @@ const Canvas = (props) => {
               color='rgba(0,0,0,0.7)'
               height='100px'
               width='auto'
-            >
-              Flexibility is sure...
-            </TextComponent>
+              text='Flexibility is sure...'
+            />
             <Element
               is={ArticleComponent}
               canvas
@@ -124,9 +112,8 @@ const Canvas = (props) => {
                   fontWeight='700'
                   textAlign='center'
                   height='50%'
-                >
-                  TITLE
-                </TextComponent>
+                  text='TITLE'
+                />
                 <TextComponent
                   fontSize='36'
                   padding='15px 10px'
@@ -135,9 +122,8 @@ const Canvas = (props) => {
                   fontWeight='200'
                   textAlign='center'
                   height='50%'
-                >
-                  Content...
-                </TextComponent>
+                  text='Content...'
+                />
               </Element>
               <Element
                 is={DivComponent}
@@ -156,9 +142,9 @@ const Canvas = (props) => {
                   fontWeight='700'
                   textAlign='center'
                   height='50%'
-                >
-                  TITLE
-                </TextComponent>
+                  text='TITLE'
+                />
+
                 <TextComponent
                   fontSize='36'
                   padding='15px 10px'
@@ -167,9 +153,8 @@ const Canvas = (props) => {
                   fontWeight='200'
                   textAlign='center'
                   height='50%'
-                >
-                  Content...
-                </TextComponent>
+                  text='Content...'
+                />
               </Element>
               <Element
                 is={DivComponent}
@@ -188,9 +173,8 @@ const Canvas = (props) => {
                   fontWeight='700'
                   textAlign='center'
                   height='50%'
-                >
-                  TITLE
-                </TextComponent>
+                  text='TITLE'
+                />
                 <TextComponent
                   fontSize='36'
                   padding='15px 10px'
@@ -199,14 +183,13 @@ const Canvas = (props) => {
                   fontWeight='200'
                   textAlign='center'
                   height='50%'
-                >
-                  Content...
-                </TextComponent>
+                  text='Content...'
+                />
               </Element>
             </Element>
           </Element>
           <SectionComponent>
-            <TextComponent textAlign='center'>Built by Williams Balogun &copy;2023</TextComponent>
+            <TextComponent textAlign='center' text='Built by Williams Balogun &copy;2023' />
           </SectionComponent>
         </Element>
       </Frame>

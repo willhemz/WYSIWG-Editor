@@ -32,9 +32,7 @@ const WebElements = () => {
       </List>
       <List>
         <Button
-          ref={(ref) =>
-            connectors.create(ref, <TextComponent fontSize='16'>Hello World</TextComponent>)
-          }
+          ref={(ref) => connectors.create(ref, <TextComponent fontSize='16' text='Hello World' />)}
         >
           <FontAwesomeIcon title='text' icon='fa-solid fa-font' />
         </Button>

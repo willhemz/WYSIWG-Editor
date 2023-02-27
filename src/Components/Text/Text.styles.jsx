@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Text = styled.p`
+export const Text = styled.div`
   font-size: ${(props) => `${props.fontSize}px`};
   line-height: ${(props) => `${props.lineHeight}px`};
   padding: ${(props) => props.padding};
@@ -13,4 +13,5 @@ export const Text = styled.p`
   height: ${(props) => (props.height ? props.height : 'auto')};
   color: ${(props) => (props.color ? props.color : '#000')};
   background: ${(props) => props.background};
+  cursor: move;
 `;
