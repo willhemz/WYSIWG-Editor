@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
-export const DivType = styled.div`
+export const Main = styled.main`
   width: ${(props) => (props.width ? `${props.width}${props.unit}` : '100%')};
   height: ${(props) => (props.height ? `${props.height}${props.unit}` : 'auto')};
   background: ${(props) => (props.background ? props.background : 'transparent')};
-  color: ${(props) => (props.color ? props.color : '#000')};
   display: ${(props) => (props.display ? props.display : 'block')};
   padding: ${(props) => (props.padding ? props.padding : '1rem')};
   flex-direction: ${(props) => (props.flexDirection ? props.flexDirection : 'row')};
@@ -12,5 +11,4 @@ export const DivType = styled.div`
   flex-wrap: ${(props) => (props.flexWrap ? props.flexWrap : 'no-wrap')};
   justify-content: ${(props) => (props.justifyContent ? props.justifyContent : 'flex-start')};
   align-items: ${(props) => (props.alignItems ? props.alignItems : 'start')};
-  box-shadow: ${(props) => props.boxShadow && props.boxShadow};
 `;

@@ -19,10 +19,3 @@ export const CanvasPage = styled.section`
     background: #f1f1f1;
   }
 `;
-
-export const CanvasBox = styled.main`
-  width: 85%;
-  height: ${(props) => (props.height ? props.height : 'max-content')};
-  background: #fff;
-  box-shadow: 0 0 1rem 0px rgba(0, 0, 0, 0.1);
-`;

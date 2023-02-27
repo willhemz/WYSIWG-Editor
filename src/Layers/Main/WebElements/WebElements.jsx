@@ -32,7 +32,7 @@ const WebElements = () => {
       </List>
       <List>
         <Button>
-          <FontAwesomeIcon title='button' icon='fa-regular fa-image' />
+          <FontAwesomeIcon title='image' icon='fa-regular fa-image' />
         </Button>
       </List>
     </Tools>
