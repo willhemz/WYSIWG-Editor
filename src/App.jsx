@@ -2,12 +2,34 @@ import React from 'react';
 import { Main, Navbar } from './Layers';
 import styled from 'styled-components';
 import './fontawesome';
+import { Editor } from '@craftjs/core';
+import {
+  ArticleComponent,
+  SectionComponent,
+  DivComponent,
+  TextComponent,
+  MainComponent,
+  ButtonComponent,
+} from './Components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const App = () => {
   return (
     <Container>
       <Navbar />
-      <Main />
+      <Editor
+        resolver={{
+          ArticleComponent,
+          SectionComponent,
+          DivComponent,
+          TextComponent,
+          MainComponent,
+          FontAwesomeIcon,
+          ButtonComponent,
+        }}
+      >
+        <Main />
+      </Editor>
     </Container>
   );
 };
