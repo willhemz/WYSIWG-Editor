@@ -10,11 +10,9 @@ const TextComponent = ({ text, ...props }) => {
     actions: { setProp },
     hasSelectedNode,
     hasDraggedNode,
-    nodeName,
   } = useNode((store) => ({
     hasSelectedNode: store.events.selected,
     hasDraggedNode: store.events.dragged,
-    nodeName: store.data.displayName,
   }));
   const [editable, setEditable] = React.useState(false);
 
@@ -38,7 +36,7 @@ const TextComponent = ({ text, ...props }) => {
 
 TextComponent.craft = {
   rules: {
-    canDrag: (node) => node.data.props.children !== 'Drag',
+    canDrag: (node) => node.data.props.text !== 'Drag',
   },
   related: {
     settings: TextSetting,

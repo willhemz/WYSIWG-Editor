@@ -38,7 +38,7 @@ const WebElements = () => {
         </Button>
       </List>
       <List>
-        <Button ref={(ref) => connectors.create(ref, <ButtonComponent>CLICK ME</ButtonComponent>)}>
+        <Button ref={(ref) => connectors.create(ref, <ButtonComponent text='CLICK ME' />)}>
           <FontAwesomeIcon title='button' icon='fa-solid fa-toggle-on' />
         </Button>
       </List>
