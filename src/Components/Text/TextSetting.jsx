@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, FormHeader, FormFooter, FormItem } from './Text.styles';
 import { data } from './textData';
 import { useNode } from '@craftjs/core';
+import { RgbaColorPicker } from 'react-colorful';
 
 const TextSetting = () => {
   const {
@@ -31,7 +32,7 @@ const TextSetting = () => {
             <FormItem key={item.id}>
               <label htmlFor={item.name}>{item.value}:</label>
               {item.name === 'background' || item.name === 'color' ? (
-                <CirclePicker
+                <RgbaColorPicker
                   name={item.name}
                   colors={['#fff', '#ff0000', '#00ff00', '#0000ff', '#000']}
                   onChange={handleChange}

@@ -26,19 +26,17 @@ const WebElements = () => {
         </Button>
       </List>
       <List>
-        <Button ref={(ref) => connectors.create(ref, <Element is={DivComponent} />)} variant='div'>
+        <Button ref={(ref) => connectors.create(ref, <Element is={DivComponent} />)}>
           <FontAwesomeIcon title='div' icon='fa-solid fa-expand' />
         </Button>
       </List>
       <List>
-        <Button
-          ref={(ref) => connectors.create(ref, <TextComponent fontSize='16' text='Hello World' />)}
-        >
+        <Button ref={(ref) => connectors.create(ref, <TextComponent />)}>
           <FontAwesomeIcon title='text' icon='fa-solid fa-font' />
         </Button>
       </List>
       <List>
-        <Button ref={(ref) => connectors.create(ref, <ButtonComponent text='CLICK ME' />)}>
+        <Button ref={(ref) => connectors.create(ref, <ButtonComponent />)}>
           <FontAwesomeIcon title='button' icon='fa-solid fa-toggle-on' />
         </Button>
       </List>

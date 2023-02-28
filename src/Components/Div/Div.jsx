@@ -2,6 +2,7 @@ import React from 'react';
 import { DivType } from './Div.styles';
 import { useNode } from '@craftjs/core';
 import SectionSettings from '../Container/SectionSettings';
+import { genProps } from '../Container/Container';
 
 const Div = ({ children, ...props }) => {
   const {
@@ -15,6 +16,7 @@ const Div = ({ children, ...props }) => {
 };
 
 Div.craft = {
+  props: genProps,
   related: {
     settings: SectionSettings,
   },

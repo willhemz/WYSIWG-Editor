@@ -35,6 +35,13 @@ const TextComponent = ({ text, ...props }) => {
 };
 
 TextComponent.craft = {
+  props: {
+    text: 'Hello World!',
+    fontSize: 16,
+    lineHeight: 24,
+    width: 'auto',
+    height: 'auto',
+  },
   rules: {
     canDrag: (node) => node.data.props.text !== 'Drag',
   },

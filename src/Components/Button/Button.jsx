@@ -4,7 +4,7 @@ import { useNode } from '@craftjs/core';
 import ContentEditable from 'react-contenteditable';
 import ButtonSetting from './ButtonSetting';
 
-const ButtonComponent = ({ text = 'Button', ...props }) => {
+const ButtonComponent = ({ text, ...props }) => {
   const {
     connectors: { connect, drag },
     actions: { setProp },
@@ -34,6 +34,9 @@ const ButtonComponent = ({ text = 'Button', ...props }) => {
 };
 
 ButtonComponent.craft = {
+  props: {
+    text: 'CLICK ME',
+  },
   rules: {
     canDrag: (node) => node.data.props.text !== 'Drag',
   },

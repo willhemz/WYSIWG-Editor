@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, FormHeader, FormFooter, FormItem } from '../Text/Text.styles';
-import { CirclePicker } from 'react-colorful';
+import { RgbaColorPicker } from 'react-colorful';
 import { useNode } from '@craftjs/core';
 import { sectionData } from './sectionData';
 
@@ -29,7 +29,7 @@ const SectionSettings = () => {
             <FormItem key={item.id}>
               <label htmlFor={item.name}>{item.value}:</label>
               {item.name === 'background' || item.name === 'color' ? (
-                <CirclePicker
+                <RgbaColorPicker
                   name={item.name}
                   colors={['#fff', '#ff0000', '#00ff00', '#0000ff', '#000']}
                   onChange={handleChange}

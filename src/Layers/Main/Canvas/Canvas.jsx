@@ -19,11 +19,12 @@ const Canvas = (props) => {
             <Element is={ArticleComponent} canvas display='flex' alignItems='center'>
               <TextComponent
                 fontSize='48'
+                lineHeight='56'
                 background='rgba(0,0,0,0.3)'
-                padding='5px 10px'
+                padding='20px'
                 color='rgba(0,0,0,0.7)'
-                height='100px'
                 text='DEXLA.IO'
+                width='100%'
               />
               <TextComponent fontSize='24' text='Build your web applications without coding...' />
             </Element>

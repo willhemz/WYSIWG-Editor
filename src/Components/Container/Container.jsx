@@ -14,7 +14,14 @@ const SectionComponent = ({ children, ...props }) => {
   );
 };
 
+export const genProps = {
+  width: '100%',
+  height: 'auto',
+  display: 'flex',
+};
+
 SectionComponent.craft = {
+  props: genProps,
   related: {
     settings: SectionSettings,
   },
