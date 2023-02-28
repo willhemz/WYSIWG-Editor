@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
-import { Form, FormHeader, FormFooter, FormItem } from './Text.styles';
-import { data } from './textData';
+import React from 'react';
+import { Form, FormHeader, FormFooter, FormItem } from '../Text/Text.styles';
+import { CirclePicker } from 'react-colorful';
 import { useNode } from '@craftjs/core';
+import { sectionData } from './sectionData';
 
-const TextSetting = () => {
+const SectionSettings = () => {
   const {
     actions: { setProp },
     props,
     nodeName,
   } = useNode((node) => ({ props: node.data.props, nodeName: node.data.displayName }));
 
-  const [data, setData] = useState({ ...props });
-  console.log(data);
-
-  const handleChange = (e) => {
+  const handleChange = (e, color) => {
     const name = e.target.name;
     const value = name === 'background' || name === 'color' ? color : e.target.value;
     setProp((props) => (props[name] = value));
@@ -26,7 +24,7 @@ const TextSetting = () => {
         <h3>{nodeName}</h3>
       </FormHeader>
       <FormFooter>
-        {data.map((item) => {
+        {sectionData.map((item) => {
           return (
             <FormItem key={item.id}>
               <label htmlFor={item.name}>{item.value}:</label>
@@ -53,4 +51,4 @@ const TextSetting = () => {
   );
 };
 
-export default TextSetting;
+export default SectionSettings;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArticleType } from './Article.styles';
 import { useNode } from '@craftjs/core';
+import SectionSettings from '../Container/SectionSettings';
 
 const Article = ({ children, ...props }) => {
   const {
@@ -11,6 +12,12 @@ const Article = ({ children, ...props }) => {
       {children}
     </ArticleType>
   );
+};
+
+Article.craft = {
+  related: {
+    settings: SectionSettings,
+  },
 };
 
 export default Article;

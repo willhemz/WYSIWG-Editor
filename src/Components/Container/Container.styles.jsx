@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Main = styled.section`
-  width: ${(props) => (props.width ? `${props.width}${props.unit}` : '100%')};
-  height: ${(props) => (props.height ? `${props.height}${props.unit}` : 'auto')};
+  width: ${(props) => (props.width ? `${props.width}px` : '100%')};
+  height: ${(props) => (props.height ? `${props.height}px` : 'auto')};
   background: ${(props) => (props.background ? props.background : 'transparent')};
   display: ${(props) => (props.display ? props.display : 'block')};
   padding: ${(props) => (props.padding ? props.padding : '1rem')};
