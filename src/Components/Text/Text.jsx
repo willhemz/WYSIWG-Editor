@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text } from './Text.styles';
+import TextSetting from './TextSetting';
 import { useNode } from '@craftjs/core';
 import ContentEditable from 'react-contenteditable';
 
@@ -9,11 +10,14 @@ const TextComponent = ({ text, ...props }) => {
     actions: { setProp },
     hasSelectedNode,
     hasDraggedNode,
-  } = useNode((state) => ({
-    hasSelectedNode: state.events.selected.size > 0,
-    hasDraggedNode: state.events.dragged.size > 0,
+    nodeName,
+  } = useNode((store) => ({
+    hasSelectedNode: store.events.selected,
+    hasDraggedNode: store.events.dragged,
+    nodeName: store.data.displayName,
   }));
   const [editable, setEditable] = React.useState(false);
+
   React.useEffect(() => {
     !hasSelectedNode && setEditable(false);
   }, [hasSelectedNode]);
@@ -35,6 +39,9 @@ const TextComponent = ({ text, ...props }) => {
 TextComponent.craft = {
   rules: {
     canDrag: (node) => node.data.props.children !== 'Drag',
+  },
+  related: {
+    settings: TextSetting,
   },
 };
 
