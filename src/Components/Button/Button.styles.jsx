@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Button = styled.button`
   font-size: ${(props) => (props.fontSize ? `${props.fontSize}px` : '16px')};
+  line-height: ${(props) => (props.lineHeight ? `${props.lineHeight}px` : 'auto')};
   font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   font-family: ${(props) => props.fontFamily};
   width: ${(props) => (props.width ? `${props.width}px` : 'auto')};

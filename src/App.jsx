@@ -16,7 +16,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const App = () => {
   return (
     <Container>
-      <Navbar />
       <Editor
         resolver={{
           ArticleComponent,
@@ -28,6 +27,7 @@ const App = () => {
           ButtonComponent,
         }}
       >
+        <Navbar />
         <Main />
       </Editor>
     </Container>

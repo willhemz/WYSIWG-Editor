@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button } from './Button.styles';
 import { useNode } from '@craftjs/core';
 import ContentEditable from 'react-contenteditable';
+import ButtonSetting from './ButtonSetting';
 
 const ButtonComponent = ({ text = 'Button', ...props }) => {
   const {
@@ -35,6 +36,9 @@ const ButtonComponent = ({ text = 'Button', ...props }) => {
 ButtonComponent.craft = {
   rules: {
     canDrag: (node) => node.data.props.text !== 'Drag',
+  },
+  related: {
+    settings: ButtonSetting,
   },
 };
 
