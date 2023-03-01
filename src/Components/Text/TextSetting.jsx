@@ -3,8 +3,10 @@ import { Form, FormFooter, FormItem } from './Text.styles';
 import { data } from './textData';
 import { useNode } from '@craftjs/core';
 import { RgbaColorPicker } from 'react-colorful';
+import { colorToRgba } from '../colorConverter';
 
 const TextSetting = () => {
+  const [color, setColor] = useState({ r: 0, g: 0, b: 0, a: 1 });
   const {
     actions: { setProp },
     props,
@@ -15,8 +17,6 @@ const TextSetting = () => {
     const value = e.target.value;
     setProp((props) => (props[name] = value));
   };
-
-  const [color, setColor] = useState({ r: 0, g: 0, b: 0, a: 1 });
 
   return (
     <Form>
@@ -53,13 +53,6 @@ const TextSetting = () => {
       </FormFooter>
     </Form>
   );
-};
-
-export const colorToRgba = (color) => {
-  let { r, g, b, a } = color;
-
-  if (a === 'NaN') a = 1;
-  return `rgba(${r},${g},${b},${a})`;
 };
 
 export default TextSetting;

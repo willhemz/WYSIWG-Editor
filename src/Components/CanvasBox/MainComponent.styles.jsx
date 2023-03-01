@@ -11,4 +11,6 @@ export const Main = styled.main`
   flex-wrap: ${(props) => (props.flexWrap ? props.flexWrap : 'no-wrap')};
   justify-content: ${(props) => (props.justifyContent ? props.justifyContent : 'flex-start')};
   align-items: ${(props) => (props.alignItems ? props.alignItems : 'start')};
+  outline: ${({ variant }) => variant === 'selected' && '1px dashed #aaa'};
+  cursor: move;
 `;

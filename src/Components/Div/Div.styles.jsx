@@ -13,4 +13,5 @@ export const DivType = styled.div`
   justify-content: ${(props) => (props.justifyContent ? props.justifyContent : 'flex-start')};
   align-items: ${(props) => (props.alignItems ? props.alignItems : 'start')};
   box-shadow: ${(props) => props.boxShadow && props.boxShadow};
+  outline: ${({ variant }) => variant === 'selected' && '1px dashed #aaa'};
 `;

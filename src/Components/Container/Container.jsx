@@ -6,9 +6,10 @@ import SectionSettings from './SectionSettings';
 const SectionComponent = ({ children, ...props }) => {
   const {
     connectors: { connect, drag },
-  } = useNode();
+    isActive,
+  } = useNode((store) => ({ isActive: store.events.selected }));
   return (
-    <Main ref={(ref) => connect(drag(ref))} {...props}>
+    <Main variant={isActive && 'selected'} ref={(ref) => connect(drag(ref))} {...props}>
       {children}
     </Main>
   );
@@ -18,6 +19,7 @@ export const genProps = {
   width: '100%',
   height: 'auto',
   display: 'flex',
+  wrap: 'no-wrap',
 };
 
 SectionComponent.craft = {

@@ -15,4 +15,6 @@ export const Button = styled.button`
   border-radius: ${(props) => (props.borderRadius ? props.borderRadius : '5px')};
   box-shadow: ${(props) => (props.boxShadow ? props.boxShadow : '0 0 10px 0 rgba(0,0,0,0.8)')};
   text-align: ${(props) => `${props.textAlign}`};
+  cursor: move;
+  outline: ${({ variant }) => variant === 'selected' && '1px dashed #aaa'};
 `;

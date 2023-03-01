@@ -7,9 +7,10 @@ import { genProps } from '../Container/Container';
 const Div = ({ children, ...props }) => {
   const {
     connectors: { connect, drag },
-  } = useNode();
+    isActive,
+  } = useNode((store) => ({ isActive: store.events.selected }));
   return (
-    <DivType ref={(ref) => connect(drag(ref))} {...props}>
+    <DivType variant={isActive && 'selected'} ref={(ref) => connect(drag(ref))} {...props}>
       {children}
     </DivType>
   );

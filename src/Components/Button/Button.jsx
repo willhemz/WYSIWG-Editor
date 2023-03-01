@@ -17,10 +17,13 @@ const ButtonComponent = ({ text, ...props }) => {
     !isActive && setEditable(false);
   }, [isActive]);
 
-  console.log(isActive);
-
   return (
-    <Button onClick={() => setEditable(true)} ref={(ref) => connect(drag(ref))} {...props}>
+    <Button
+      variant={isActive && 'selected'}
+      onClick={() => setEditable(true)}
+      ref={(ref) => connect(drag(ref))}
+      {...props}
+    >
       <ContentEditable
         disabled={!editable}
         html={text}

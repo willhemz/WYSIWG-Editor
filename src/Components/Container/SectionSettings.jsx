@@ -1,28 +1,26 @@
-import React from 'react';
-import { Form, FormHeader, FormFooter, FormItem } from '../Text/Text.styles';
+import React, { useState } from 'react';
+import { Form, FormFooter, FormItem } from '../Text/Text.styles';
 import { RgbaColorPicker } from 'react-colorful';
 import { useNode } from '@craftjs/core';
 import { sectionData } from './sectionData';
+import { colorToRgba } from '../colorConverter';
 
 const SectionSettings = () => {
+  const [color, setColor] = useState({ r: 0, g: 0, b: 0, a: 1 });
   const {
     actions: { setProp },
     props,
     nodeName,
   } = useNode((node) => ({ props: node.data.props, nodeName: node.data.displayName }));
 
-  const handleChange = (e, color) => {
+  const handleChange = (e) => {
     const name = e.target.name;
-    const value = name === 'background' || name === 'color' ? color : e.target.value;
+    const value = e.target.value;
     setProp((props) => (props[name] = value));
   };
 
   return (
     <Form>
-      <FormHeader>
-        <p>Selected:</p>
-        <h3>{nodeName}</h3>
-      </FormHeader>
       <FormFooter>
         {sectionData.map((item) => {
           return (
@@ -31,8 +29,15 @@ const SectionSettings = () => {
               {item.name === 'background' || item.name === 'color' ? (
                 <RgbaColorPicker
                   name={item.name}
-                  colors={['#fff', '#ff0000', '#00ff00', '#0000ff', '#000']}
-                  onChange={handleChange}
+                  color={color}
+                  onChange={(color) => {
+                    setColor;
+                    setProp((props) =>
+                      item.name === 'color'
+                        ? (props.color = colorToRgba(color))
+                        : (props.background = colorToRgba(color)),
+                    );
+                  }}
                 />
               ) : (
                 <input
