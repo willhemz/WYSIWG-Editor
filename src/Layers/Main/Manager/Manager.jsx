@@ -3,7 +3,7 @@ import { Editor } from './Manager.styles';
 import { useEditor } from '@craftjs/core';
 
 const Manager = () => {
-  const { selected } = useEditor((store) => {
+  const { actions, selected } = useEditor((store, query) => {
     const [nodeId] = store.events.selected;
     let selected;
     if (nodeId)
@@ -11,9 +11,11 @@ const Manager = () => {
         id: nodeId,
         name: store.nodes[nodeId].data.name,
         settings: store.nodes[nodeId].related && store.nodes[nodeId].related.settings,
+        isDeletable: query.node(nodeId).isDeletable(),
       };
     return { selected };
   });
+  console.log(useEditor());
   return selected ? (
     <Editor>
       <header>
@@ -21,7 +23,9 @@ const Manager = () => {
       </header>
       {selected.settings && React.createElement(selected.settings)}
       <footer>
-        <button>Delete</button>
+        {selected.isDeletable && (
+          <button onClick={() => actions.delete(selected.id)}>Delete</button>
+        )}
       </footer>
     </Editor>
   ) : (

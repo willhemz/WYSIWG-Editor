@@ -21,6 +21,24 @@ export const Editor = styled.aside`
     font-size: 1rem;
   }
 
+  footer {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 5px;
+    text-align: center;
+  }
+
+  footer > button {
+    width: 80%;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    background: #5c1002;
+    color: #f1f1f1;
+    border: none;
+    box-shadow: 0 0 0.7rem #5c1002;
+  }
+
   ::-webkit-scrollbar {
     scroll-behavior: smooth;
     width: 1rem;
