@@ -21,7 +21,12 @@ const TextComponent = ({ text, ...props }) => {
   }, [hasSelectedNode]);
 
   return (
-    <Text onClick={() => setEditable(true)} ref={(ref) => connect(drag(ref))} {...props}>
+    <Text
+      variant={hasSelectedNode && 'selected'}
+      onClick={() => setEditable(true)}
+      ref={(ref) => connect(drag(ref))}
+      {...props}
+    >
       <ContentEditable
         disabled={!editable}
         html={text}
@@ -41,6 +46,12 @@ TextComponent.craft = {
     lineHeight: 24,
     width: 'auto',
     height: 'auto',
+    color: 'rgba(0,0,0,1)',
+    background: 'transparent',
+    padding: 0,
+    margin: 0,
+    textAlign: 'left',
+    fontWeight: 400,
   },
   rules: {
     canDrag: (node) => node.data.props.text !== 'Drag',

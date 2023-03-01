@@ -29,6 +29,3 @@ li {
   list-style-type: none;
 }
 
-p[contentEditable='true'],span[contentEditable='true'] {
-  outline: 1px dashed #aaa;
-}

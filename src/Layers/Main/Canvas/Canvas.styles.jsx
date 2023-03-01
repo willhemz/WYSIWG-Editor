@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const CanvasPage = styled.section`
-  grid-column-start: span 25;
+  grid-column-start: span 19;
   height: calc(100vh - 6rem);
   background: rgba(230, 222, 222, 0.4);
   overflow-y: scroll;

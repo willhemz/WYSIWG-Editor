@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Form, FormHeader, FormFooter, FormItem } from './Text.styles';
+import React, { useRef, useState } from 'react';
+import { Form, FormFooter, FormItem } from './Text.styles';
 import { data } from './textData';
 import { useNode } from '@craftjs/core';
 import { RgbaColorPicker } from 'react-colorful';
@@ -8,24 +8,18 @@ const TextSetting = () => {
   const {
     actions: { setProp },
     props,
-    nodeName,
-  } = useNode((node) => ({ props: node.data.props, nodeName: node.data.displayName }));
-
-  const [data, setData] = useState({ ...props });
-  console.log(data);
+  } = useNode((node) => ({ props: node.data.props }));
 
   const handleChange = (e) => {
     const name = e.target.name;
-    const value = name === 'background' || name === 'color' ? color : e.target.value;
+    const value = e.target.value;
     setProp((props) => (props[name] = value));
   };
 
+  const [color, setColor] = useState({ r: 0, g: 0, b: 0, a: 1 });
+
   return (
     <Form>
-      <FormHeader>
-        <p>Selected:</p>
-        <h3>{nodeName}</h3>
-      </FormHeader>
       <FormFooter>
         {data.map((item) => {
           return (
@@ -34,8 +28,15 @@ const TextSetting = () => {
               {item.name === 'background' || item.name === 'color' ? (
                 <RgbaColorPicker
                   name={item.name}
-                  colors={['#fff', '#ff0000', '#00ff00', '#0000ff', '#000']}
-                  onChange={handleChange}
+                  color={color}
+                  onChange={(color) => {
+                    setColor;
+                    setProp((props) =>
+                      item.name === 'color'
+                        ? (props.color = colorToRgba(color))
+                        : (props.background = colorToRgba(color)),
+                    );
+                  }}
                 />
               ) : (
                 <input
@@ -52,6 +53,13 @@ const TextSetting = () => {
       </FormFooter>
     </Form>
   );
+};
+
+export const colorToRgba = (color) => {
+  let { r, g, b, a } = color;
+
+  if (a === 'NaN') a = 1;
+  return `rgba(${r},${g},${b},${a})`;
 };
 
 export default TextSetting;

@@ -11,21 +11,19 @@ export const Text = styled.div`
   font-style: ${(props) => props.fontStyle};
   width: ${(props) => (props.width ? props.width : '100%')};
   height: ${(props) => (props.height ? props.height : 'auto')};
-  color: ${(props) => (props.color ? props.color : '#000')};
+  color: ${(props) => (props.color ? props.color : 'rgba(0,0,0,1)')};
   background: ${(props) => props.background};
   cursor: move;
-  position: relative;
+  outline: ${({ variant }) => variant === 'selected' && '1px dashed #aaa'};
 `;
 
 export const Form = styled.form`
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 10;
   font-size: 1.4rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 100%;
+  margin-top: 1.5rem;
 `;
 
 export const FormHeader = styled.div`
@@ -44,14 +42,22 @@ export const FormItem = styled.div`
   display: flex;
   gap: 5px;
   label {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
+    flex-grow: 1;
+    flex-shrink: 0;
   }
   input {
-    flex-grow: 1;
+    flex-grow: 0;
     padding: 5px;
     border-radius: 5px;
     background: transparent;
     border: 2px solid #000;
+    flex-basis: 50%;
+    width: 80%;
   }
+`;
+
+export const ColorPicker = styled(FormItem)`
+  flex-direction: column;
 `;
