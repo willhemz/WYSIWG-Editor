@@ -20,9 +20,12 @@ export const genProps = {
   width: '100%',
   height: 'auto',
   display: 'flex',
-  wrap: 'no-wrap',
+  wrap: 'nowrap',
+  rgbColor: '{r:0,g:0,b:0,1}',
+  rgbBackground: '{r:255,g:255,b:255,1}',
+  color: 'rgba(0,0,0,1)',
+  background: 'rgba(255,255,255,1)',
 };
-
 SectionComponent.craft = {
   props: genProps,
   related: {

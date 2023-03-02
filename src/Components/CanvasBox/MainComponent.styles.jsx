@@ -4,6 +4,7 @@ export const Main = styled.main`
   width: ${(props) => (props.width ? props.width : '100%')};
   height: ${(props) => (props.height ? props.height : '100%')};
   background: ${(props) => (props.background ? props.background : 'transparent')};
+  color: ${(props) => props.color};
   display: ${(props) => (props.display ? props.display : 'block')};
   padding: ${(props) => (props.padding ? props.padding : '1rem')};
   flex-direction: ${(props) => (props.flexDirection ? props.flexDirection : 'row')};

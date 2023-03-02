@@ -6,7 +6,7 @@ export const Editor = styled.aside`
   height: calc(100vh - 6rem);
   background: #fff;
   flex-direction: column;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   overflow-x: wrap;
   padding: 1rem;
   font-size: 1.4rem;
@@ -39,7 +39,7 @@ export const Editor = styled.aside`
     box-shadow: 0 0 0.7rem #5c1002;
   }
 
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
     scroll-behavior: smooth;
     width: 1rem;
   }
@@ -48,5 +48,5 @@ export const Editor = styled.aside`
   }
   ::-webkit-scrollbar-track {
     background: #f1f1f1;
-  }
+  } */
 `;

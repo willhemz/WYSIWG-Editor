@@ -40,13 +40,20 @@ export const FormItem = styled.div`
   width: 100%;
   display: flex;
   gap: 5px;
+  position: relative;
   label {
     font-size: 1rem;
     font-weight: 600;
-    flex-grow: 1;
-    flex-shrink: 0;
+    width: max-content;
   }
-  input {
+
+  .colorPicker {
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+  /* input,
+  select {
     flex-grow: 0;
     padding: 5px;
     border-radius: 5px;
@@ -54,7 +61,30 @@ export const FormItem = styled.div`
     border: 2px solid #000;
     flex-basis: 50%;
     width: 80%;
+  } */
+`;
+
+export const FormGroup = styled.div`
+  display: flex;
+  width: 100%;
+  gap: ${(props) => (props.variant === 'measure' ? '4px' : '1rem')};
+
+  input {
+    width: 80%;
+    padding: 2px 5px;
   }
+
+  select {
+    width: ${(props) => props.variant === 'resize' && '100%'};
+  }
+
+  span {
+    font-size: 0.8rem;
+  }
+`;
+
+export const FormTemp = styled(FormGroup)`
+  gap: 2px;
 `;
 
 export const ColorPicker = styled(FormItem)`
