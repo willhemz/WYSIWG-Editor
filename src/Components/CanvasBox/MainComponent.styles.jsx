@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Main = styled.main`
   width: ${(props) => (props.width ? props.width : '100%')};
-  height: ${(props) => (props.height ? props.height : 'auto')};
+  height: ${(props) => (props.height ? props.height : '100%')};
   background: ${(props) => (props.background ? props.background : 'transparent')};
   display: ${(props) => (props.display ? props.display : 'block')};
   padding: ${(props) => (props.padding ? props.padding : '1rem')};
@@ -12,5 +12,5 @@ export const Main = styled.main`
   justify-content: ${(props) => (props.justifyContent ? props.justifyContent : 'flex-start')};
   align-items: ${(props) => (props.alignItems ? props.alignItems : 'start')};
   outline: ${({ variant }) => variant === 'selected' && '1px dashed #aaa'};
-  cursor: move;
+  cursor: ${({ variant }) => variant === 'selected' && 'move'};
 `;

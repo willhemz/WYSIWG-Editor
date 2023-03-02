@@ -11,22 +11,22 @@ import {
 } from '../../../Components';
 
 const WebElements = () => {
-  const { connectors, query } = useEditor();
+  const { connectors, query, enabled } = useEditor((store) => ({ enabled: store.options.enabled }));
 
   return (
-    <Tools>
+    <Tools variant={!enabled && 'hide'}>
       <List>
-        <Button ref={(ref) => connectors.create(ref, <Element is={SectionComponent} />)}>
+        <Button ref={(ref) => connectors.create(ref, <Element is={SectionComponent} canvas />)}>
           <FontAwesomeIcon title='container' icon='fa-regular fa-square' />
         </Button>
       </List>
       <List>
-        <Button ref={(ref) => connectors.create(ref, <Element is={ArticleComponent} />)}>
+        <Button ref={(ref) => connectors.create(ref, <Element is={ArticleComponent} canvas />)}>
           <FontAwesomeIcon title='article' icon='fa-regular fa-square' />
         </Button>
       </List>
       <List>
-        <Button ref={(ref) => connectors.create(ref, <Element is={DivComponent} />)}>
+        <Button ref={(ref) => connectors.create(ref, <Element is={DivComponent} canvas />)}>
           <FontAwesomeIcon title='div' icon='fa-solid fa-expand' />
         </Button>
       </List>

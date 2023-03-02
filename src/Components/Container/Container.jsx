@@ -1,17 +1,18 @@
 import React from 'react';
-import { Main } from './Container.styles';
-import { useNode } from '@craftjs/core';
+import { Section } from './Container.styles';
+import { useNode, useEditor } from '@craftjs/core';
 import SectionSettings from './SectionSettings';
 
 const SectionComponent = ({ children, ...props }) => {
   const {
     connectors: { connect, drag },
-    isActive,
-  } = useNode((store) => ({ isActive: store.events.selected }));
+  } = useNode();
+  const { enabled } = useEditor((store) => ({ enabled: store.options.enabled }));
+
   return (
-    <Main variant={isActive && 'selected'} ref={(ref) => connect(drag(ref))} {...props}>
+    <Section variant={enabled && 'selected'} ref={(ref) => connect(drag(ref))} {...props}>
       {children}
-    </Main>
+    </Section>
   );
 };
 

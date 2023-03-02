@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const Editor = styled.aside`
-  grid-column-start: span 5;
+  grid-column-start: ${(props) => props.variant !== 'hide' && 'span 5'};
+  display: ${(props) => (props.variant === 'hide' ? 'none' : 'flex')};
   height: calc(100vh - 6rem);
   background: #fff;
-  display: flex;
   flex-direction: column;
   overflow-y: scroll;
   overflow-x: wrap;

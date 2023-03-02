@@ -1,16 +1,16 @@
 import React from 'react';
 import { DivType } from './Div.styles';
-import { useNode } from '@craftjs/core';
+import { useEditor, useNode } from '@craftjs/core';
 import SectionSettings from '../Container/SectionSettings';
 import { genProps } from '../Container/Container';
 
 const Div = ({ children, ...props }) => {
   const {
     connectors: { connect, drag },
-    isActive,
-  } = useNode((store) => ({ isActive: store.events.selected }));
+  } = useNode();
+  const { enabled } = useEditor((store) => ({ enabled: store.options.enabled }));
   return (
-    <DivType variant={isActive && 'selected'} ref={(ref) => connect(drag(ref))} {...props}>
+    <DivType variant={enabled && 'selected'} ref={(ref) => connect(drag(ref))} {...props}>
       {children}
     </DivType>
   );

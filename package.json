@@ -7,9 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "precommit": "NODE_ENV=production lint-staged",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "precommit": "NODE_ENV=production lint-staged"
   },
   "dependencies": {
     "@craftjs/core": "^0.2.0-beta.8",
@@ -19,6 +17,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@popperjs/core": "^2.11.6",
     "@reduxjs/toolkit": "^1.9.3",
+    "lzutf8": "^0.6.3",
     "react": "^18.2.0",
     "react-colorful": "^5.6.1",
     "react-contenteditable": "^3.3.6",
@@ -29,13 +28,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
-    "@storybook/addon-actions": "^6.5.16",
-    "@storybook/addon-essentials": "^6.5.16",
-    "@storybook/addon-interactions": "^6.5.16",
-    "@storybook/addon-links": "^6.5.16",
-    "@storybook/builder-vite": "^0.4.2",
-    "@storybook/react": "^6.5.16",
-    "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",

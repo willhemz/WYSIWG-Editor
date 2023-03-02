@@ -4,7 +4,7 @@ export const NavMenu = styled.header`
   width: 100%;
   height: 6rem;
   background: #fff;
-  display: flex;
+  display: ${({ variant }) => (variant === 'hide' ? 'none' : 'flex')};
   flex-direction: column;
 `;
 

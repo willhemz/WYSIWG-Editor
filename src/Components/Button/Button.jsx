@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from './Button.styles';
-import { useNode } from '@craftjs/core';
+import { useNode, useEditor } from '@craftjs/core';
 import ContentEditable from 'react-contenteditable';
 import ButtonSetting from './ButtonSetting';
 
@@ -9,8 +9,9 @@ const ButtonComponent = ({ text, ...props }) => {
     connectors: { connect, drag },
     actions: { setProp },
     isActive,
-    isDragged,
-  } = useNode((store) => ({ isActive: store.events.selected, isDragged: store.events.dragged }));
+  } = useNode((store) => ({ isActive: store.events.selected }));
+
+  const { enabled } = useEditor((store) => ({ enabled: store.options.enabled }));
 
   const [editable, setEditable] = useState(false);
   useEffect(() => {
@@ -19,8 +20,9 @@ const ButtonComponent = ({ text, ...props }) => {
 
   return (
     <Button
-      variant={isActive && 'selected'}
-      onClick={() => setEditable(true)}
+      type='submit'
+      variant={enabled && 'selected'}
+      onClick={() => enabled && setEditable(true)}
       ref={(ref) => connect(drag(ref))}
       {...props}
     >

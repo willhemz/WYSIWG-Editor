@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const ArticleType = styled.article`
-  width: ${(props) => (props.width ? `${props.width}${props.unit}` : '100%')};
-  height: ${(props) => (props.height ? `${props.height}${props.unit}` : 'auto')};
+  width: ${(props) => (props.width ? props.width : '100%')};
+  height: ${(props) => (props.height ? props.height : 'auto')};
   background: ${(props) => (props.background ? props.background : 'transparent')};
   display: ${(props) => (props.display ? props.display : 'block')};
   padding: ${(props) => (props.padding ? props.padding : '1rem')};
@@ -11,4 +11,6 @@ export const ArticleType = styled.article`
   flex-wrap: ${(props) => (props.flexWrap ? props.flexWrap : 'no-wrap')};
   justify-content: ${(props) => (props.justifyContent ? props.justifyContent : 'flex-start')};
   align-items: ${(props) => (props.alignItems ? props.alignItems : 'start')};
+  cursor: ${({ variant }) => variant === 'selected' && 'move'};
+  border: ${({ variant }) => variant === 'selected' && '1px dashed #aaa'};
 `;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text } from './Text.styles';
 import TextSetting from './TextSetting';
-import { useNode } from '@craftjs/core';
+import { useEditor, useNode } from '@craftjs/core';
 import ContentEditable from 'react-contenteditable';
 
 const TextComponent = ({ text, ...props }) => {
@@ -9,11 +9,12 @@ const TextComponent = ({ text, ...props }) => {
     connectors: { connect, drag },
     actions: { setProp },
     hasSelectedNode,
-    hasDraggedNode,
   } = useNode((store) => ({
     hasSelectedNode: store.events.selected,
-    hasDraggedNode: store.events.dragged,
   }));
+
+  const { enabled } = useEditor((store) => ({ enabled: store.options.enabled }));
+
   const [editable, setEditable] = React.useState(false);
 
   React.useEffect(() => {
@@ -22,8 +23,8 @@ const TextComponent = ({ text, ...props }) => {
 
   return (
     <Text
-      variant={hasSelectedNode && 'selected'}
-      onClick={() => setEditable(true)}
+      variant={enabled && 'selected'}
+      onClick={() => enabled && setEditable(true)}
       ref={(ref) => connect(drag(ref))}
       {...props}
     >

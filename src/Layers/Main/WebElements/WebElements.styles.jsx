@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Tools = styled.ul`
-  grid-column-start: span 1;
-  display: flex;
+  grid-column-start: ${(props) => props.variant !== 'hide' && 'span 1'};
+  display: ${(props) => (props.variant === 'hide' ? 'none' : 'flex')};
   padding: 1.5rem 0;
   flex-direction: column;
   justify-content: start;

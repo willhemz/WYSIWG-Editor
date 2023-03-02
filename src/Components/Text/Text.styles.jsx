@@ -13,7 +13,6 @@ export const Text = styled.div`
   height: ${(props) => (props.height ? props.height : 'auto')};
   color: ${(props) => (props.color ? props.color : 'rgba(0,0,0,1)')};
   background: ${(props) => props.background};
-  cursor: move;
   outline: ${({ variant }) => variant === 'selected' && '1px dashed #aaa'};
 `;
 

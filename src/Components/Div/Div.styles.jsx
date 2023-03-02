@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const DivType = styled.div`
-  width: ${(props) => (props.width ? `${props.width}${props.unit}` : '100%')};
-  height: ${(props) => (props.height ? `${props.height}${props.unit}` : 'auto')};
+  width: ${(props) => (props.width ? props.width : '100%')};
+  height: ${(props) => (props.height ? props.height : 'auto')};
   background: ${(props) => (props.background ? props.background : 'transparent')};
   color: ${(props) => (props.color ? props.color : '#000')};
   display: ${(props) => (props.display ? props.display : 'block')};
