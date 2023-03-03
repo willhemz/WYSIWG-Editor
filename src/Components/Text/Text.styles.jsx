@@ -46,22 +46,22 @@ export const FormItem = styled.div`
     font-weight: 600;
     width: max-content;
   }
+`;
 
-  .colorPicker {
-    position: absolute;
-    top: 100%;
-    left: 0;
+export const Color = styled.div`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding-top: 3px;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10;
+
+  button {
+    color: #fff;
   }
-  /* input,
-  select {
-    flex-grow: 0;
-    padding: 5px;
-    border-radius: 5px;
-    background: transparent;
-    border: 2px solid #000;
-    flex-basis: 50%;
-    width: 80%;
-  } */
 `;
 
 export const FormGroup = styled.div`
@@ -72,9 +72,11 @@ export const FormGroup = styled.div`
   input {
     width: 80%;
     padding: 2px 5px;
+    font-size: ${({ variant }) => variant === 'resize' && '11px'};
   }
 
-  select {
+  select,
+  input {
     width: ${(props) => props.variant === 'resize' && '100%'};
   }
 

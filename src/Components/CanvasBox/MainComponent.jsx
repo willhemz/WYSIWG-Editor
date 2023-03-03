@@ -2,6 +2,7 @@ import React from 'react';
 import { Main } from './MainComponent.styles';
 import { useEditor, useNode } from '@craftjs/core';
 import SectionSettings from '../Container/SectionSettings';
+import { genProps } from '../Container/Container';
 
 const MainComponent = ({ children, ...props }) => {
   const {
@@ -18,12 +19,18 @@ const MainComponent = ({ children, ...props }) => {
 
 MainComponent.craft = {
   props: {
-    height: '100%',
-    width: '100%',
-    background: '#fff',
+    ...genProps,
+    height: 100,
+    width: 100,
     display: 'flex',
     flexDirection: 'column',
-    gap: '5px',
+    gap: 5,
+    uG: 'px',
+    uH: '%',
+    paddingTop: 0,
+    paddingRight: 0,
+    paddingBottom: 0,
+    paddingLeft: 0,
   },
   related: {
     settings: SectionSettings,

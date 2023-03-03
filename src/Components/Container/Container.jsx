@@ -17,15 +17,27 @@ const SectionComponent = ({ children, ...props }) => {
 };
 
 export const genProps = {
-  width: '100%',
+  width: '100',
   height: 'auto',
   display: 'flex',
   wrap: 'nowrap',
-  rgbColor: '{r:0,g:0,b:0,1}',
-  rgbBackground: '{r:255,g:255,b:255,1}',
   color: 'rgba(0,0,0,1)',
   background: 'rgba(255,255,255,1)',
+  bg: '{r:255,g:255,b:255,a:1}',
+  uW: '%',
+  uH: 'auto',
+  uG: 'px',
+  paddingTop: '10',
+  paddingRight: '10',
+  paddingBottom: '10',
+  paddingLeft: '10',
+  marginTop: '0',
+  marginRight: '0',
+  marginBottom: '0',
+  marginLeft: '0',
+  gap: 0,
 };
+
 SectionComponent.craft = {
   props: genProps,
   related: {

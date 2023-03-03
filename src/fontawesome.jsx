@@ -18,6 +18,7 @@ import {
   faToggleOn,
   faCheck,
   faEyeSlash,
+  faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { faSquarePlus, faSquare, faImage } from '@fortawesome/free-regular-svg-icons';
@@ -42,4 +43,5 @@ library.add(
   faImage,
   faCheck,
   faEyeSlash,
+  faXmark,
 );

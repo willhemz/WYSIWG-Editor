@@ -3,12 +3,12 @@ import React from 'react';
 export const Justify = () => {
   return (
     <>
-      <option value='1'>flex-start</option>
-      <option value='2'>flex-end</option>
-      <option value='3'>center</option>
-      <option value='4'>space-evenly</option>
-      <option value='5'>space-between</option>
-      <option value='6'>space-around</option>
+      <option defaultValue='flex-start'>flex-start</option>
+      <option defaultValue='flex-end'>flex-end</option>
+      <option defaultValue='center'>center</option>
+      <option defaultValue='space-evenly'>space-evenly</option>
+      <option defaultValue='space-between'>space-between</option>
+      <option defaultValue='space-around'>space-around</option>
     </>
   );
 };
@@ -16,10 +16,10 @@ export const Justify = () => {
 export const Align = () => {
   return (
     <>
-      <option value='1'>flex-start</option>
-      <option value='2'>flex-end</option>
-      <option value='3'>center</option>
-      <option value='4'>stretch</option>
+      <option defaultValue='flex-start'>flex-start</option>
+      <option defaultValue='flex-end'>flex-end</option>
+      <option defaultValue='center'>center</option>
+      <option defaultValue='stretch'>stretch</option>
     </>
   );
 };

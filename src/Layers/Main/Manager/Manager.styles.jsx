@@ -6,7 +6,7 @@ export const Editor = styled.aside`
   height: calc(100vh - 6rem);
   background: #fff;
   flex-direction: column;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
   overflow-x: wrap;
   padding: 1rem;
   font-size: 1.4rem;
