@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useNode } from '@craftjs/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Color, Form, FormFooter, FormGroup, FormItem, FormTemp } from '../Text/Text.styles';
+import {
+  Color,
+  FIDuplicate,
+  Form,
+  FormFooter,
+  FormGroup,
+  FormItem,
+  FormTemp,
+} from '../Text/Text.styles';
 import { RgbaColorPicker } from 'react-colorful';
 import { objMargin, objPadding } from './sectionData';
 import { colorToRgba } from '../colorConverter';
@@ -13,16 +21,13 @@ const SectionSettings = () => {
   const {
     actions: { setProp },
     props,
-    nodeName,
-  } = useNode((node) => ({ props: node.data.props, nodeName: node.data.displayName }));
+  } = useNode((node) => ({ props: node.data.props }));
 
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     setProp((props) => (props[name] = value));
   };
-
-  console.log(props);
 
   return (
     <Form>
@@ -67,7 +72,7 @@ const SectionSettings = () => {
             </select>
           </FormGroup>
         </FormItem>
-        <FormItem>
+        <FIDuplicate>
           <label htmlFor='padding'>Padding:</label>
           <FormGroup variant='measure'>
             {objPadding.map((item) => {
@@ -87,8 +92,8 @@ const SectionSettings = () => {
               );
             })}
           </FormGroup>
-        </FormItem>
-        <FormItem>
+        </FIDuplicate>
+        <FIDuplicate>
           <label htmlFor='margin'>Margin:</label>
           <FormGroup variant='measure'>
             {objMargin.map((item) => {
@@ -108,7 +113,7 @@ const SectionSettings = () => {
               );
             })}
           </FormGroup>
-        </FormItem>
+        </FIDuplicate>
         <FormItem>
           <label htmlFor='display'>Display:</label>
           <FormGroup variant='resize'>

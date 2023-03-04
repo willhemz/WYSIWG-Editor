@@ -48,6 +48,10 @@ export const FormItem = styled.div`
   }
 `;
 
+export const FIDuplicate = styled(FormItem)`
+  flex-direction: column;
+`;
+
 export const Color = styled.div`
   position: absolute;
   top: 100%;
@@ -68,6 +72,7 @@ export const FormGroup = styled.div`
   display: flex;
   width: 100%;
   gap: ${(props) => (props.variant === 'measure' ? '4px' : '1rem')};
+  flex-wrap: ${(props) => props.variant === 'measure' && 'wrap'};
 
   input {
     width: 80%;
@@ -87,6 +92,7 @@ export const FormGroup = styled.div`
 
 export const FormTemp = styled(FormGroup)`
   gap: 2px;
+  width: 40%;
 `;
 
 export const ColorPicker = styled(FormItem)`
