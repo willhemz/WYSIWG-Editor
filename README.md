@@ -59,13 +59,13 @@ You can check your system's node version by:
 To download project to your computer, follow the steps below:
 
 - Launch your bash terminal
-- Then click [here](https://github/willhemz/dexla-assessment) to assess the repository.
+- Then click [here](https://github.com/willhemz/WYSIWG-Editor) to assess the repository.
 - Click either the `HTTPS` button or `SSH` button. copy either the `HTTPS CODE` or `SSH CODE`.
 - Proceed to your terminal. Go to the directory where you want the project stored.
 - Type `git clone`, then paste either the `HTTPS CODE` or `SSH CODE`.\
   Then press `ENTER` key.
 - After file is completely downloaded, switch to the project directory by typing:\
-  `cd dexla-assessment`
+  `cd wysiwg-editor`
 
 In the project directory, you can run:
 
