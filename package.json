@@ -16,13 +16,11 @@
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@popperjs/core": "^2.11.6",
-    "@reduxjs/toolkit": "^1.9.3",
     "lzutf8": "^0.6.3",
     "react": "^18.2.0",
     "react-colorful": "^5.6.1",
     "react-contenteditable": "^3.3.6",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.0.5",
     "react-web-editor": "^2.2.6",
     "styled-components": "^5.3.6"
   },

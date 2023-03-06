@@ -29,14 +29,14 @@ export const Editor = styled.aside`
   }
 
   footer > button {
-    width: 80%;
+    width: 60%;
     padding: 0.8rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border-radius: 1rem;
-    background: #5c1002;
-    color: #f1f1f1;
+    background: #f1f1f1;
+    color: #000;
     border: none;
-    box-shadow: 0 0 0.7rem #5c1002;
+    box-shadow: 0 0 0.5rem #aaa;
   }
 
   /* ::-webkit-scrollbar {

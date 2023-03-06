@@ -21,13 +21,17 @@ const Navbar = () => {
           <p>Dexla.io</p>
         </Title>
         <Title variant='outline'>
-          <a href='https://github.com/willhemz/WYSIWG-Editor'>Github</a>
-          <a href='https://github.com/willhemz/WYSIWG-Editor'>Documentation</a>
+          <a href='https://github.com/willhemz/WYSIWG-Editor' target='_blank'>
+            Github
+          </a>
+          <a href='https://github.com/willhemz/WYSIWG-Editor' target='_blank'>
+            Documentation
+          </a>
         </Title>
       </Header>
       <Footer>
         <Section>
-          {icons.slice(0, 3).map(({ id, title, icon }) => {
+          {icons.slice(0, 4).map(({ id, title, icon }) => {
             return (
               <IconBtn key={id}>
                 <FontAwesomeIcon title={title} icon={icon} />
@@ -36,7 +40,7 @@ const Navbar = () => {
           })}
         </Section>
         <Section variant='tools'>
-          {icons.slice(3, 10).map(({ id, title, icon }) => {
+          {icons.slice(4, 4).map(({ id, title, icon }) => {
             return (
               <IconBtn type='button' onClick={() => handleClick(title)} key={id}>
                 <FontAwesomeIcon title={title} icon={icon} />
@@ -45,13 +49,7 @@ const Navbar = () => {
           })}
         </Section>
         <Section variant='management'>
-          {icons.slice(10, 13).map(({ id, title, icon }) => {
-            return (
-              <IconBtn key={id} variant='iconMgt'>
-                <FontAwesomeIcon title={title} icon={icon} />
-              </IconBtn>
-            );
-          })}
+          <IconBtn variant='iconMgt'>CUSTOMIZE</IconBtn>
         </Section>
       </Footer>
     </NavMenu>
