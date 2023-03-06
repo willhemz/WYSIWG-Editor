@@ -40,20 +40,29 @@ const TextComponent = ({ text, ...props }) => {
   );
 };
 
+export const textProps = {
+  text: 'Hello World!',
+  fontSize: 16,
+  lineHeight: 24,
+  width: 'auto',
+  height: 'auto',
+  color: 'rgba(0,0,0,1)',
+  background: 'transparent',
+  paddingTop: 0,
+  paddingRight: 0,
+  paddingBottom: 0,
+  paddingLeft: 0,
+  marginTop: 0,
+  marginBottom: 0,
+  marginRight: 0,
+  marginLeft: 0,
+  textAlign: 'left',
+  fontWeight: 400,
+  flexBasis: 0,
+};
+
 TextComponent.craft = {
-  props: {
-    text: 'Hello World!',
-    fontSize: 16,
-    lineHeight: 24,
-    width: 'auto',
-    height: 'auto',
-    color: 'rgba(0,0,0,1)',
-    background: 'transparent',
-    padding: 0,
-    margin: 0,
-    textAlign: 'left',
-    fontWeight: 400,
-  },
+  props: textProps,
   rules: {
     canDrag: (node) => node.data.props.text !== 'Drag',
   },

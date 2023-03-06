@@ -1,20 +1,27 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
-  font-size: ${(props) => (props.fontSize ? `${props.fontSize}px` : '16px')};
-  line-height: ${(props) => (props.lineHeight ? `${props.lineHeight}px` : 'auto')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
+  font-size: ${(props) => `${props.fontSize}px`};
+  line-height: ${(props) => `${props.lineHeight}px`};
+  padding-top: ${(props) => (props.paddingTop ? `${props.paddingTop}px` : '0')};
+  padding-right: ${(props) => (props.paddingRight ? `${props.paddingRight}px` : '0')};
+  padding-left: ${(props) => (props.paddingLeft ? `${props.paddingLeft}px` : '0')};
+  padding-bottom: ${(props) => (props.paddingBottom ? `${props.paddingBottom}px` : '0')};
+  margin-top: ${(props) => (props.marginTop ? `${props.marginTop}px` : '0')};
+  margin-right: ${(props) => (props.marginRight ? `${props.marginRight}px` : '0')};
+  margin-left: ${(props) => (props.marginLeft ? `${props.marginLeft}px` : '0')};
+  margin-bottom: ${(props) => (props.marginBottom ? `${props.marginBottom}px` : '0')};
+  text-align: ${(props) => props.textAlign};
+  font-weight: ${(props) => props.fontWeight};
   font-family: ${(props) => props.fontFamily};
-  width: ${(props) => (props.width ? `${props.width}px` : 'auto')};
-  height: ${(props) => (props.height ? `${props.height}px` : 'auto')};
-  color: ${(props) => (props.color ? props.color : 'white')};
-  background: ${(props) => (props.background ? props.background : 'blue')};
-  padding: ${(props) => (props.padding ? props.padding : '10px')};
-  margin: ${(props) => (props.margin ? props.margin : '0')};
-  border: ${(props) => (props.border ? props.border : 'none')};
-  border-radius: ${(props) => (props.borderRadius ? props.borderRadius : '5px')};
-  box-shadow: ${(props) => (props.boxShadow ? props.boxShadow : '0 0 10px 0 rgba(0,0,0,0.8)')};
-  text-align: ${(props) => `${props.textAlign}`};
+  font-style: ${(props) => props.fontStyle};
+  flex-basis: ${(props) =>
+    props.flexBasis && props.flexBasis !== '0' ? `${props.flexBasis}%` : 'auto'};
+  color: ${(props) => (props.color ? props.color : 'rgba(0,0,0,1)')};
+  background: ${(props) => props.background};
   outline: ${({ variant }) => variant === 'selected' && '1px dashed #aaa'};
+  border: ${(props) => `${props.border}px ${props.borderType} ${props.borderColor}`};
+  border-radius: ${(props) => (props.borderRadius ? `${props.borderRadius}px` : '5px')};
+  box-shadow: ${(props) => (props.boxShadow ? props.boxShadow : '0 0 5px 0 rgba(0,0,0,0.8)')};
   cursor: ${({ variant }) => variant === 'selected' && 'move'};
 `;

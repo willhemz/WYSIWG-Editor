@@ -3,6 +3,7 @@ import { Button } from './Button.styles';
 import { useNode, useEditor } from '@craftjs/core';
 import ContentEditable from 'react-contenteditable';
 import ButtonSetting from './ButtonSetting';
+import { textProps } from '../Text/Text';
 
 const ButtonComponent = ({ text, ...props }) => {
   const {
@@ -40,7 +41,16 @@ const ButtonComponent = ({ text, ...props }) => {
 
 ButtonComponent.craft = {
   props: {
+    ...textProps,
     text: 'CLICK ME',
+    paddingTop: 4,
+    paddingBottom: 4,
+    paddingLeft: 4,
+    paddingRight: 4,
+    background: 'rgba(255,255,255,1)',
+    border: 0,
+    borderColor: 'rgba(0,0,0,1)',
+    borderType: 'solid',
   },
   rules: {
     canDrag: (node) => node.data.props.text !== 'Drag',
