@@ -24,7 +24,7 @@ const TextComponent = ({ text, ...props }) => {
   return (
     <Text
       variant={enabled && 'selected'}
-      onClick={() => enabled && setEditable(true)}
+      onClick={() => hasSelectedNode && setEditable(true)}
       ref={(ref) => connect(drag(ref))}
       {...props}
     >
@@ -34,7 +34,7 @@ const TextComponent = ({ text, ...props }) => {
         onChange={(e) =>
           setProp((props) => (props.text = e.target.value.replace(/<\/?[^>]+(>|$)/g, '')))
         }
-        tagName='p'
+        tagName='span'
       />
     </Text>
   );

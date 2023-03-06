@@ -10,8 +10,9 @@ import {
   TextComponent,
   MainComponent,
   ButtonComponent,
+  FormComponent,
+  InputComponent,
 } from './Components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const App = () => {
   return (
@@ -23,8 +24,9 @@ const App = () => {
           DivComponent,
           TextComponent,
           MainComponent,
-          FontAwesomeIcon,
           ButtonComponent,
+          FormComponent,
+          InputComponent,
         }}
       >
         <Navbar />

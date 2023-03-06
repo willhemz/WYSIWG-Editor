@@ -8,6 +8,8 @@ import {
   SectionComponent,
   DivComponent,
   TextComponent,
+  FormComponent,
+  InputComponent,
 } from '../../../Components';
 
 const WebElements = () => {
@@ -36,8 +38,13 @@ const WebElements = () => {
         </Button>
       </List>
       <List>
-        <Button>
+        <Button ref={(ref) => connectors.create(ref, <Element is={FormComponent} canvas />)}>
           <FontAwesomeIcon title='form' icon='fa-solid fa-f' />
+        </Button>
+      </List>
+      <List>
+        <Button ref={(ref) => connectors.create(ref, <InputComponent />)}>
+          <FontAwesomeIcon title='input' icon='fa-solid fa-i' />
         </Button>
       </List>
       <List>

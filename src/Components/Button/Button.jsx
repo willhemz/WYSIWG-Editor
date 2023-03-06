@@ -23,7 +23,7 @@ const ButtonComponent = ({ text, ...props }) => {
     <Button
       type='submit'
       variant={enabled && 'selected'}
-      onClick={() => enabled && setEditable(true)}
+      onClick={() => isActive && setEditable(true)}
       ref={(ref) => connect(drag(ref))}
       {...props}
     >

@@ -4,3 +4,5 @@ export { default as SectionComponent } from './Container/Container';
 export { default as DivComponent } from './Div/Div';
 export { default as ArticleComponent } from './Article/Article';
 export { default as MainComponent } from './CanvasBox/MainComponent';
+export { default as FormComponent } from './Form/Form';
+export { default as InputComponent } from './Input/Input';

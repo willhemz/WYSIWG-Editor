@@ -20,6 +20,7 @@ import {
   faEyeSlash,
   faXmark,
   faF,
+  faI,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { faSquarePlus, faSquare } from '@fortawesome/free-regular-svg-icons';
@@ -45,4 +46,5 @@ library.add(
   faEyeSlash,
   faXmark,
   faF,
+  faI,
 );

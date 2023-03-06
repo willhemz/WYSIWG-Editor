@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Text = styled.div`
+export const Text = styled.p`
   font-size: ${(props) => `${props.fontSize}px`};
   line-height: ${(props) => `${props.lineHeight}px`};
   padding-top: ${(props) => (props.paddingTop ? `${props.paddingTop}px` : '0')};
