@@ -29,6 +29,12 @@ const SectionSettings = () => {
     setProp((props) => (props[name] = value));
   };
 
+  useEffect(() => {
+    if (props.height === 'auto') {
+      props.uH !== 'auto' && setProp((props) => (props.height = 1));
+    }
+  }, [props.uH]);
+
   return (
     <Form>
       <FormFooter>
