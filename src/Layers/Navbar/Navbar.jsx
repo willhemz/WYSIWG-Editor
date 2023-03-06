@@ -33,7 +33,7 @@ const Navbar = () => {
         <Section>
           {icons.slice(0, 4).map(({ id, title, icon }) => {
             return (
-              <IconBtn key={id}>
+              <IconBtn type='button' onClick={() => handleClick(title)} key={id}>
                 <FontAwesomeIcon title={title} icon={icon} />
               </IconBtn>
             );
