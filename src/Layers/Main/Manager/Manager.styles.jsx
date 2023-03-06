@@ -15,6 +15,7 @@ export const Editor = styled.aside`
     text-align: center;
     border: 1px dashed black;
     padding-bottom: 5px;
+    font-size: 1.2rem;
   }
 
   em {

@@ -8,12 +8,11 @@ export const Section = styled.section`
       ? 'auto'
       : '100%'};
   height: ${(props) =>
-    props.height && props.uH && props.uH !== 'auto'
-      ? `${props.width}${props.uH}`
-      : props.uH === 'auto'
+    props.height && props.height !== 'auto' && props.uH && props.uH !== 'auto'
+      ? `${props.height}${props.uH}`
+      : props.uH === 'auto' || props.height === 'auto'
       ? 'auto'
       : '100%'};
-
   background: ${(props) => (props.background ? props.background : 'transparent')};
   color: ${(props) => props.color};
   display: ${(props) => (props.display ? props.display : 'block')};

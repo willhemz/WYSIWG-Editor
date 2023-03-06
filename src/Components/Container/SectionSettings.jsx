@@ -38,6 +38,7 @@ const SectionSettings = () => {
             <input
               min={1}
               step={1}
+              max={(props.uW === '%' || props.uW === 'vh') && 100}
               type={props.width === 'auto' || props.uW === 'auto' ? 'text' : 'number'}
               name='width'
               id='width'
@@ -58,7 +59,8 @@ const SectionSettings = () => {
             <input
               min={1}
               step={1}
-              type={props.uH === 'auto' ? 'text' : 'number'}
+              max={(props.uH === '%' || props.uH === 'vh') && 100}
+              type={props.uH === 'auto' || props.height === 'auto' ? 'text' : 'number'}
               name='height'
               id='height'
               value={props.height}
