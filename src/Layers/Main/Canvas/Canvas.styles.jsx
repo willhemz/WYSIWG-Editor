@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CanvasPage = styled.section`
   grid-column-start: ${(props) => (props.variant === 'enlarge' ? 'span 25' : 'span 19')};
-  height: ${(props) => (props.variant === 'enlarge' ? 'auto' : 'calc(100vh - 6rem)')};
+  height: ${(props) => (props.variant === 'enlarge' ? 'max-content' : 'calc(100vh - 6rem)')};
   background: rgba(230, 222, 222, 0.4);
   overflow-y: ${(props) => props.variant === 'selected' && 'scroll'};
   padding: ${({ variant }) => variant === 'selected' && '2rem 3rem'};
