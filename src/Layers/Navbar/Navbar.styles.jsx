@@ -53,6 +53,14 @@ export const Section = styled.article`
       ? 'space-around'
       : 'flex-start'};
   background: ${({ variant }) => variant === 'management' && 'rgb(73, 25, 15)'};
+  .mobile,
+  .tablet,
+  .desktop,
+  .panel,
+  .layer {
+    background: rgba(204, 204, 204, 0.5);
+    padding: 0 5px;
+  }
 `;
 
 export const IconBtn = styled.button`

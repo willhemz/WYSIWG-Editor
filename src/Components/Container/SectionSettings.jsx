@@ -65,7 +65,6 @@ const SectionSettings = () => {
             <input
               min={1}
               step={1}
-              max={(props.uH === '%' || props.uH === 'vh') && 100}
               type={props.uH === 'auto' || props.height === 'auto' ? 'text' : 'number'}
               name='height'
               id='height'
