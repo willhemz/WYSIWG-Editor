@@ -8,11 +8,13 @@ const InputComponent = ({ name, text, type, ...props }) => {
   const {
     connectors: { connect, drag },
     actions: { setProp },
-  } = useNode();
+    isActive,
+  } = useNode((store) => ({ isActive: store.events.selected }));
   const { enabled } = useEditor((store) => ({ enabled: store.options.enabled }));
 
   return (
     <Input
+      disabled={isActive ? true : false}
       variant={enabled && 'selected'}
       ref={(ref) => connect(drag(ref))}
       name={name}
