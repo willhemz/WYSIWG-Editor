@@ -16,7 +16,6 @@ const SectionComponent = ({ children }) => {
   const {
     connectors: { connect, drag },
     custom: { desktop, mobile, tablet },
-    actions: { setCustom },
   } = useNode((node) => ({ custom: node.data.custom }));
   const { enabled } = useEditor((store) => ({ enabled: store.options.enabled }));
 

@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useEditor, useNode } from '@craftjs/core';
 import { useSelector } from 'react-redux';
 import { genProps, calcSize } from '../Container/sectionData';
 import SectionSettings from '../Container/SectionSettings';
 import { Form } from './Form.styles';
 
-const FormComponent = ({ children, ...props }) => {
+const FormComponent = ({ children }) => {
   const { isDesktop, isTablet, isMobile, boxWidth } = useSelector((store) => ({
     isDesktop: store.isDesktop,
     isTablet: store.isTablet,
     isMobile: store.isMobile,
     boxWidth: store.boxWidth,
   }));
-  const [data, setData] = useState([]);
   const {
     connectors: { connect, drag },
-    actions: { setProp },
-    custom,
-  } = useNode((node) => ({ custom: node.data.custom }));
-  const { enabled } = useEditor((store) => ({ enabled: store.options.enabled }));
+    custom: { desktop, tablet, mobile },
+  } = useNode((node) => ({
+    custom: node.data.custom,
+  }));
+  const { enabled, query } = useEditor((store) => ({ enabled: store.options.enabled }));
 
   let view;
   if (isDesktop) {
@@ -42,7 +42,15 @@ const FormComponent = ({ children, ...props }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('submitted');
+    const state = Object.values(query.getNodes())
+      .map((obj) => obj.data)
+      .filter((obj) => obj.name === 'Input')
+      .reduce((state, { props }) => {
+        const { name, text } = props;
+        return (state = { ...state, [name]: text });
+      }, {});
+
+    console.log(state, 'submitted');
   };
 
   return (

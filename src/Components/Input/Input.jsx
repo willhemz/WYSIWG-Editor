@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useEditor, useNode } from '@craftjs/core';
 import { Input } from './Input.styles';
-
 import { textProps } from '../Text/Text';
-import ButtonSetting from '../Button/ButtonSetting';
+import InputSetting from './InputSetting';
 
 const InputComponent = ({ name, text, type, ...props }) => {
   const {
@@ -41,7 +40,7 @@ InputComponent.craft = {
     borderType: 'solid',
   },
   related: {
-    settings: ButtonSetting,
+    settings: InputSetting,
   },
 };
 
