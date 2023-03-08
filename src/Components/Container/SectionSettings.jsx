@@ -237,41 +237,41 @@ const SectionSettings = () => {
                 </select>
               </FormGroup>
             </FormItem>
-            <FormItem>
-              <label htmlFor='background'>Background:</label>
-              <FormGroup variant='resize'>
-                <input
-                  readOnly
-                  onClick={() => setPalette(true)}
-                  type='text'
-                  name='background'
-                  id='background'
-                  value={data.background}
-                />
-              </FormGroup>
-              {palette && (
-                <Color>
-                  <button onClick={() => setPalette(false)}>
-                    <FontAwesomeIcon icon='fa-solid fa-xmark' />
-                  </button>
-                  <RgbaColorPicker
-                    color={color}
-                    onChange={(color) => {
-                      setColor;
-                      setData({ ...data, background: colorToRgba(color) });
-                      isDesktop &&
-                        setCustom((custom) => (custom.desktop['background'] = colorToRgba(color)));
-                      isTablet &&
-                        setCustom((custom) => (custom.tablet['background'] = colorToRgba(color)));
-                      isMobile &&
-                        setCustom((custom) => (custom.mobile['background'] = colorToRgba(color)));
-                    }}
-                  />
-                </Color>
-              )}
-            </FormItem>
           </>
         )}
+        <FormItem>
+          <label htmlFor='background'>Background:</label>
+          <FormGroup variant='resize'>
+            <input
+              readOnly
+              onClick={() => setPalette(true)}
+              type='text'
+              name='background'
+              id='background'
+              value={data.background}
+            />
+          </FormGroup>
+          {palette && (
+            <Color>
+              <button onClick={() => setPalette(false)}>
+                <FontAwesomeIcon icon='fa-solid fa-xmark' />
+              </button>
+              <RgbaColorPicker
+                color={color}
+                onChange={(color) => {
+                  setColor;
+                  setData({ ...data, background: colorToRgba(color) });
+                  isDesktop &&
+                    setCustom((custom) => (custom.desktop['background'] = colorToRgba(color)));
+                  isTablet &&
+                    setCustom((custom) => (custom.tablet['background'] = colorToRgba(color)));
+                  isMobile &&
+                    setCustom((custom) => (custom.mobile['background'] = colorToRgba(color)));
+                }}
+              />
+            </Color>
+          )}
+        </FormItem>
       </FormFooter>
     </Form>
   );

@@ -57,10 +57,6 @@ export const calcSize = (a, b) => {
   a = parseFloat(a);
   b = parseFloat(b);
   let x = 834.2083740234375;
-  if (isDesktop) x;
-  if (isTablet) x = 0.7 * x;
-  if (isMobile) x = 0.4 * x;
-
   const y = (x * a) / b;
   return y;
 };

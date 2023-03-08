@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Main } from './MainComponent.styles';
 import { useEditor, useNode } from '@craftjs/core';
 import { useSelector } from 'react-redux';
+import MainSettings from './MainSettings';
 
 const MainComponent = ({ children, ...props }) => {
   const dom = useRef(null);
@@ -31,7 +32,10 @@ const MainComponent = ({ children, ...props }) => {
 };
 
 MainComponent.craft = {
-  props: { view: 'desktop' },
+  props: { view: 'desktop', background: 'rgba(255,255,255,1)' },
+  related: {
+    settings: MainSettings,
+  },
 };
 
 export default MainComponent;

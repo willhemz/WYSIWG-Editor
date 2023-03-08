@@ -10,7 +10,7 @@ export const Main = styled.main`
       ? '40%'
       : '100%'};
   height: auto;
-  background: white;
+  background: ${(props) => props.background};
   overflow-y: auto;
   overflow-x: hidden;
 
