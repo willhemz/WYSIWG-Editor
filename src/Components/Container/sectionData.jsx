@@ -53,7 +53,7 @@ export const genProps = {
   type: 'desktop',
 };
 
-const calcSize = (a, b) => {
+export const calcSize = (a, b) => {
   a = parseFloat(a);
   b = parseFloat(b);
   let x = 834.2083740234375;

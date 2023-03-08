@@ -258,8 +258,7 @@ const SectionSettings = () => {
                     color={color}
                     onChange={(color) => {
                       setColor;
-                      setProp((data) => (data.background = colorToRgba(color)));
-
+                      setData({ ...data, background: colorToRgba(color) });
                       isDesktop &&
                         setCustom((custom) => (custom.desktop['background'] = colorToRgba(color)));
                       isTablet &&
