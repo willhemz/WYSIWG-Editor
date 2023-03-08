@@ -3,13 +3,13 @@ import styled from 'styled-components';
 export const NavMenu = styled.header`
   width: 100%;
   height: 6rem;
-  background: #fff;
+  background: #242121;
   display: ${({ variant }) => (variant === 'hide' ? 'none' : 'flex')};
   flex-direction: column;
 `;
 
 export const Header = styled.nav`
-  color: rgb(73, 25, 15);
+  color: rgb(158, 152, 151);
   width: 100%;
   height: 55%;
   display: flex;
@@ -52,7 +52,7 @@ export const Section = styled.article`
       : variant === 'management'
       ? 'space-around'
       : 'flex-start'};
-  background: ${({ variant }) => variant === 'management' && 'rgb(73, 25, 15)'};
+  background: ${({ variant }) => variant === 'management' && 'rgb(158, 152, 151)'};
   .mobile,
   .tablet,
   .desktop,
@@ -64,7 +64,7 @@ export const Section = styled.article`
 `;
 
 export const IconBtn = styled.button`
-  color: ${({ variant }) => (variant === 'iconMgt' ? '#fff' : 'rgb(73, 25, 15)')};
+  color: ${({ variant }) => (variant === 'iconMgt' ? '#fff' : 'rgb(158, 152, 151)')};
   font-size: 1rem;
   border: none;
 `;

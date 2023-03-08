@@ -8,10 +8,11 @@ export const Tools = styled.ul`
   justify-content: start;
   align-items: center;
   gap: 1rem;
+  background: #242121;
 `;
 
 export const List = styled.li`
-  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   width: 100%;
   padding: 0.8rem 0;
   text-align: center;
@@ -21,4 +22,5 @@ export const Btn = styled.button`
   border: none;
   font-size: 1.2rem;
   cursor: move;
+  color: rgb(158, 152, 151);
 `;

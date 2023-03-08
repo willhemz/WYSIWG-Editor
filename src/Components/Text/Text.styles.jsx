@@ -89,6 +89,10 @@ export const FormGroup = styled.div`
   select,
   input {
     width: ${(props) => props.variant === 'resize' && '100%'};
+    background: transparent;
+    border: 1px solid rgb(158, 152, 151);
+    border-radius: 5px;
+    color: rgb(158, 152, 151);
   }
 
   span {

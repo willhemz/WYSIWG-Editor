@@ -4,7 +4,8 @@ export const Editor = styled.aside`
   grid-column-start: ${(props) => props.variant !== 'hide' && 'span 5'};
   display: ${(props) => (props.variant === 'hide' ? 'none' : 'flex')};
   height: calc(100vh - 6rem);
-  background: #fff;
+  background: #242121;
+  color: rgb(158, 152, 151);
   flex-direction: column;
   overflow-y: ${(props) => (props.variant === 'hide' ? 'hidden' : 'auto')};
   overflow-x: hidden;
@@ -13,7 +14,7 @@ export const Editor = styled.aside`
 
   h4 {
     text-align: center;
-    border: 1px dashed black;
+    border: 1px dashed rgb(158, 152, 151);
     padding-bottom: 5px;
     font-size: 1.2rem;
   }
