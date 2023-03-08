@@ -1,8 +1,13 @@
 import React from 'react';
 import { Editor } from './Manager.styles';
 import { useEditor } from '@craftjs/core';
+import { useSelector } from 'react-redux';
+import { Layers } from '@craftjs/layers';
 
 const Manager = () => {
+  const { isLayer } = useSelector((store) => ({
+    isLayer: store.isLayer,
+  }));
   const { actions, selected, enabled } = useEditor((store, query) => {
     const [nodeId] = store.events.selected;
     let selected;
@@ -15,6 +20,14 @@ const Manager = () => {
       };
     return { selected, enabled: store.options.enabled };
   });
+
+  if (isLayer) {
+    return (
+      <Editor variant={!enabled && 'hide'}>
+        <Layers />
+      </Editor>
+    );
+  }
 
   return selected ? (
     <Editor variant={!enabled && 'hide'}>
