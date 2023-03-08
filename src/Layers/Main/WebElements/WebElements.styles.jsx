@@ -17,7 +17,7 @@ export const List = styled.li`
   text-align: center;
 `;
 
-export const Button = styled.button`
+export const Btn = styled.button`
   border: none;
   font-size: 1.2rem;
   cursor: move;

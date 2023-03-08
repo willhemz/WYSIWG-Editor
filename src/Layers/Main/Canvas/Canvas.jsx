@@ -1,9 +1,9 @@
 import React from 'react';
 import { BtnClick, CanvasPage } from './Canvas.styles';
-import { MainComponent } from '../../../Components';
-import { Editor, Frame, Element, useEditor } from '@craftjs/core';
+import { Main } from '../../../Components';
+import { Frame, Element, useEditor } from '@craftjs/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-const Canvas = (props) => {
+const Canvas = () => {
   const {
     actions: { setOptions },
     enabled,
@@ -11,7 +11,7 @@ const Canvas = (props) => {
   return (
     <CanvasPage variant={enabled ? 'selected' : 'enlarge'}>
       <Frame>
-        <Element is={MainComponent} canvas />
+        <Element is={Main} canvas />
       </Frame>
       <BtnClick
         onClick={() => setOptions((options) => (options.enabled = 'true'))}

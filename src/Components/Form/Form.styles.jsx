@@ -1,35 +1,32 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-  width: ${(props) =>
-    props.width && props.uW && props.uW !== 'auto'
-      ? `${props.width}${props.uW}`
-      : props.uW === 'auto'
+  width: ${({ custom }) =>
+    custom.width && custom.uW && custom.uW !== 'auto'
+      ? `${custom.width}${custom.uW}`
+      : custom.uW === 'auto'
       ? 'auto'
       : '100%'};
-  height: ${(props) =>
-    props.height && props.uH && props.uH !== 'auto'
-      ? `${props.width}${props.uH}`
-      : props.uH === 'auto'
-      ? 'auto'
-      : '100%'};
-
-  background: ${(props) => (props.background ? props.background : 'transparent')};
-  color: ${(props) => props.color};
-  display: ${(props) => (props.display ? props.display : 'block')};
-  padding-top: ${(props) => (props.paddingTop ? `${props.paddingTop}px` : '0')};
-  padding-right: ${(props) => (props.paddingRight ? `${props.paddingRight}px` : '0')};
-  padding-left: ${(props) => (props.paddingLeft ? `${props.paddingLeft}px` : '0')};
-  padding-bottom: ${(props) => (props.paddingBottom ? `${props.paddingBottom}px` : '0')};
-  margin-top: ${(props) => (props.marginTop ? `${props.marginTop}px` : '0')};
-  margin-right: ${(props) => (props.marginRight ? `${props.marginRight}px` : '0')};
-  margin-left: ${(props) => (props.marginLeft ? `${props.marginLeft}px` : '0')};
-  margin-bottom: ${(props) => (props.marginBottom ? `${props.marginBottom}px` : '0')};
-  flex-direction: ${(props) => (props.flexDirection ? props.flexDirection : 'row')};
-  gap: ${(props) => (props.gap && props.uG ? `${props.gap}${props.uG}` : '0')};
-  flex-wrap: ${(props) => (props.flexWrap ? props.flexWrap : 'nowrap')};
-  justify-content: ${(props) => (props.justifyContent ? props.justifyContent : 'flex-start')};
-  align-items: ${(props) => (props.alignItems ? props.alignItems : 'start')};
+  height: ${({ custom }) =>
+    custom.height && custom.height !== 'auto' && custom.uH && custom.uH !== 'auto'
+      ? `${custom.height}${custom.uH}`
+      : custom.uH === 'auto' || (custom.height === 'auto' && 'auto')};
+  background: ${({ custom }) => (custom.background ? custom.background : 'transparent')};
+  display: ${({ custom }) => (custom.display ? custom.display : 'block')};
+  padding-top: ${({ custom }) => (custom.paddingTop ? `${custom.paddingTop}px` : '10px')};
+  padding-right: ${({ custom }) => (custom.paddingRight ? `${custom.paddingRight}px` : '10px')};
+  padding-left: ${({ custom }) => (custom.paddingLeft ? `${custom.paddingLeft}px` : '10px')};
+  padding-bottom: ${({ custom }) => (custom.paddingBottom ? `${custom.paddingBottom}px` : '10px')};
+  margin-top: ${({ custom }) => (custom.marginTop ? `${custom.marginTop}px` : '0')};
+  margin-right: ${({ custom }) => (custom.marginRight ? `${custom.marginRight}px` : '0')};
+  margin-left: ${({ custom }) => (custom.marginLeft ? `${custom.marginLeft}px` : '0')};
+  margin-bottom: ${({ custom }) => (custom.marginBottom ? `${custom.marginBottom}px` : '0')};
+  flex-direction: ${({ custom }) => (custom.flexDirection ? custom.flexDirection : 'row')};
+  gap: ${({ custom }) => (custom.gap && custom.uG ? `${custom.gap}${custom.uG}` : '0')};
+  flex-wrap: ${({ custom }) => (custom.flexWrap ? custom.flexWrap : 'nowrap')};
+  justify-content: ${({ custom }) =>
+    custom.justifyContent ? custom.justifyContent : 'flex-start'};
+  align-items: ${({ custom }) => (custom.alignItems ? custom.alignItems : 'start')};
   outline: ${({ variant }) => variant === 'selected' && '1px dashed #aaa'};
   cursor: ${({ variant }) => variant === 'selected' && 'move'};
 `;

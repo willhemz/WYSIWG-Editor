@@ -1,44 +1,40 @@
-import React from 'react';
-import { Main, Navbar } from './Layers';
+import React, { useEffect } from 'react';
+import { Navbar, Wrapper } from './Layers';
 import styled from 'styled-components';
 import './fontawesome';
 import { Editor } from '@craftjs/core';
-import {
-  ArticleComponent,
-  SectionComponent,
-  DivComponent,
-  TextComponent,
-  MainComponent,
-  ButtonComponent,
-  FormComponent,
-  InputComponent,
-} from './Components';
+import { Container, Text, Main, Button, Form, Input } from './Components';
+import { useDispatch } from 'react-redux';
+import { setWidth } from './store';
 
 const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    window.addEventListener('resize', () => dispatch(setWidth(window.innerWidth)));
+    return () => window.removeEventListener('resize', () => dispatch(setWidth(window.innerWidth)));
+  }, []);
   return (
-    <Container>
+    <AppWrapper>
       <Editor
         resolver={{
-          ArticleComponent,
-          SectionComponent,
-          DivComponent,
-          TextComponent,
-          MainComponent,
-          ButtonComponent,
-          FormComponent,
-          InputComponent,
+          Container,
+          Text,
+          Main,
+          Button,
+          Form,
+          Input,
         }}
       >
         <Navbar />
-        <Main />
+        <Wrapper />
       </Editor>
-    </Container>
+    </AppWrapper>
   );
 };
 
 export default App;
 
-const Container = styled.div`
+const AppWrapper = styled.div`
   width: 100%;
   height: 100vh;
   padding: 0;

@@ -1,16 +1,8 @@
 import React from 'react';
-import { Button, List, Tools } from './WebElements.styles';
+import { Btn, List, Tools } from './WebElements.styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Element, useEditor } from '@craftjs/core';
-import {
-  ButtonComponent,
-  ArticleComponent,
-  SectionComponent,
-  DivComponent,
-  TextComponent,
-  FormComponent,
-  InputComponent,
-} from '../../../Components';
+import { Button, Container, Text, Form, Input } from '../../../Components';
 
 const WebElements = () => {
   const { connectors, query, enabled } = useEditor((store) => ({ enabled: store.options.enabled }));
@@ -18,39 +10,30 @@ const WebElements = () => {
   return (
     <Tools variant={!enabled && 'hide'}>
       <List>
-        <Button ref={(ref) => connectors.create(ref, <Element is={SectionComponent} canvas />)}>
+        <Btn ref={(ref) => connectors.create(ref, <Element is={Container} canvas />)}>
           <FontAwesomeIcon title='container' icon='fa-regular fa-square' />
-        </Button>
+        </Btn>
       </List>
+
       <List>
-        <Button ref={(ref) => connectors.create(ref, <Element is={ArticleComponent} canvas />)}>
-          <FontAwesomeIcon title='article' icon='fa-regular fa-square' />
-        </Button>
-      </List>
-      <List>
-        <Button ref={(ref) => connectors.create(ref, <Element is={DivComponent} canvas />)}>
-          <FontAwesomeIcon title='div' icon='fa-solid fa-expand' />
-        </Button>
-      </List>
-      <List>
-        <Button ref={(ref) => connectors.create(ref, <TextComponent />)}>
+        <Btn ref={(ref) => connectors.create(ref, <Text />)}>
           <FontAwesomeIcon title='text' icon='fa-solid fa-font' />
-        </Button>
+        </Btn>
       </List>
       <List>
-        <Button ref={(ref) => connectors.create(ref, <Element is={FormComponent} canvas />)}>
+        <Btn ref={(ref) => connectors.create(ref, <Element is={Form} canvas />)}>
           <FontAwesomeIcon title='form' icon='fa-solid fa-f' />
-        </Button>
+        </Btn>
       </List>
       <List>
-        <Button ref={(ref) => connectors.create(ref, <InputComponent />)}>
+        <Btn ref={(ref) => connectors.create(ref, <Input />)}>
           <FontAwesomeIcon title='input' icon='fa-solid fa-i' />
-        </Button>
+        </Btn>
       </List>
       <List>
-        <Button ref={(ref) => connectors.create(ref, <ButtonComponent />)}>
+        <Btn ref={(ref) => connectors.create(ref, <Button />)}>
           <FontAwesomeIcon title='button' icon='fa-solid fa-toggle-on' />
-        </Button>
+        </Btn>
       </List>
     </Tools>
   );

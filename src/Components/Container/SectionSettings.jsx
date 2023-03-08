@@ -14,26 +14,62 @@ import { RgbaColorPicker } from 'react-colorful';
 import { objMargin, objPadding } from './sectionData';
 import { colorToRgba } from '../colorConverter';
 import { Align, Justify } from './flexControl';
+import { useSelector } from 'react-redux';
 
 const SectionSettings = () => {
+  const { isDesktop, isMobile, isTablet } = useSelector((store) => ({
+    isDesktop: store.isDesktop,
+    isTablet: store.isTablet,
+    isMobile: store.isMobile,
+  }));
   const [color, setColor] = useState({ r: 0, g: 0, b: 0, a: 1 });
   const [palette, setPalette] = useState(false);
   const {
-    actions: { setProp },
+    actions: { setProp, setCustom },
     props,
-  } = useNode((node) => ({ props: node.data.props }));
+    custom,
+  } = useNode((node) => ({ props: node.data.props, custom: node.data.custom }));
+
+  const [data, setData] = useState(props);
 
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    setProp((props) => (props[name] = value));
+    if (isDesktop) setCustom((custom) => (custom.desktop[name] = value));
+    if (isTablet) setCustom((custom) => (custom.tablet[name] = value));
+    if (isMobile) setCustom((custom) => (custom.mobile[name] = value));
+    setData({ ...data, [name]: value });
   };
 
   useEffect(() => {
-    if (props.height === 'auto') {
-      props.uH !== 'auto' && setProp((props) => (props.height = 1));
+    if (data.height === 'auto') {
+      data.uH !== 'auto' && setData({ ...data, height: 1 });
     }
-  }, [props.uH]);
+    if (custom.desktop.height === 'auto')
+      custom.desktop.uH !== 'auto' && setCustom((custom) => (custom.desktop.height = 1));
+    if (custom.tablet.height === 'auto')
+      custom.tablet.uH !== 'auto' && setCustom((custom) => (custom.tablet.height = 1));
+    if (custom.tablet.height === 'auto')
+      custom.tablet.uH !== 'auto' && setCustom((custom) => (custom.tablet.height = 1));
+  }, [data.uH, custom]);
+
+  useEffect(() => {
+    if (isDesktop) {
+      Object.keys(custom.desktop).length === 0
+        ? setCustom((custom) => (custom.desktop = data))
+        : (custom.desktop, setData(custom.desktop));
+    }
+    if (isTablet) {
+      Object.keys(custom.tablet).length === 0
+        ? setCustom((custom) => (custom.tablet = data))
+        : (custom.tablet, setData(custom.tablet));
+    }
+    if (isMobile) {
+      Object.keys(custom.mobile).length === 0
+        ? setCustom((custom) => (custom.mobile = data))
+        : (custom.mobile, setData(custom.mobile));
+    }
+  }, [isDesktop, isTablet, isMobile]);
 
   return (
     <Form>
@@ -44,14 +80,14 @@ const SectionSettings = () => {
             <input
               min={1}
               step={1}
-              max={(props.uW === '%' || props.uW === 'vh') && 100}
-              type={props.width === 'auto' || props.uW === 'auto' ? 'text' : 'number'}
+              max={data.uW === '%' || data.uW === 'vh' ? '100' : undefined}
+              type={data.width === 'auto' || data.uW === 'auto' ? 'text' : 'number'}
               name='width'
               id='width'
-              value={props.width}
+              value={data.width}
               onChange={handleChange}
             />
-            <select value={props.uW} onChange={handleChange} name='uW' id='uW'>
+            <select value={data.uW} onChange={handleChange} name='uW' id='uW'>
               <option defaultValue='px'>px</option>
               <option defaultValue='%'>%</option>
               <option defaultValue='vw'>vw</option>
@@ -65,13 +101,13 @@ const SectionSettings = () => {
             <input
               min={1}
               step={1}
-              type={props.uH === 'auto' || props.height === 'auto' ? 'text' : 'number'}
+              type={data.uH === 'auto' || data.height === 'auto' ? 'text' : 'number'}
               name='height'
               id='height'
-              value={props.height}
+              value={data.height}
               onChange={handleChange}
             />
-            <select value={props.uH} onChange={handleChange} name='uH' id='uH'>
+            <select value={data.uH} onChange={handleChange} name='uH' id='uH'>
               <option defaultValue='px'>px</option>
               <option defaultValue='%'>%</option>
               <option defaultValue='vh'>vh</option>
@@ -91,7 +127,7 @@ const SectionSettings = () => {
                     type='number'
                     name={item.name}
                     id={item.name}
-                    value={props[item.name]}
+                    value={data[item.name]}
                     onChange={handleChange}
                   />
                   <span>px</span>
@@ -112,7 +148,7 @@ const SectionSettings = () => {
                     type='number'
                     name={item.name}
                     id={item.name}
-                    value={props[item.name]}
+                    value={data[item.name]}
                     onChange={handleChange}
                   />
                   <span>px</span>
@@ -124,7 +160,7 @@ const SectionSettings = () => {
         <FormItem>
           <label htmlFor='display'>Display:</label>
           <FormGroup variant='resize'>
-            <select value={props.display} onChange={handleChange} name='display' id='display'>
+            <select value={data.display} onChange={handleChange} name='display' id='display'>
               <option defaultValue='block'>block</option>
               <option defaultValue='inline'>inline</option>
               <option defaultValue='flex'>flex</option>
@@ -132,13 +168,13 @@ const SectionSettings = () => {
             </select>
           </FormGroup>
         </FormItem>
-        {props.display === 'flex' && (
+        {data.display === 'flex' && (
           <>
             <FormItem>
               <label htmlFor='flexDirection'>Direction:</label>
               <FormGroup variant='resize'>
                 <select
-                  value={props.flexDirection}
+                  value={data.flexDirection}
                   onChange={handleChange}
                   name='flexDirection'
                   id='flexDirection'
@@ -157,10 +193,10 @@ const SectionSettings = () => {
                   type='number'
                   name='gap'
                   id='gap'
-                  value={props.gap}
+                  value={data.gap}
                   onChange={handleChange}
                 />
-                <select value={props.uG} onChange={handleChange} name='uG' id='uG'>
+                <select value={data.uG} onChange={handleChange} name='uG' id='uG'>
                   <option defaultValue='px'>px</option>
                   <option defaultValue='%'>%</option>
                 </select>
@@ -170,12 +206,12 @@ const SectionSettings = () => {
               <label htmlFor='justifyContent'>Justify:</label>
               <FormGroup variant='resize'>
                 <select
-                  value={props.justifyContent}
+                  value={data.justifyContent}
                   onChange={handleChange}
                   name='justifyContent'
                   id='justifyContent'
                 >
-                  {props.flexDirection === 'row' ? <Justify /> : <Align />}
+                  {data.flexDirection === 'row' ? <Justify /> : <Align />}
                 </select>
               </FormGroup>
             </FormItem>
@@ -183,24 +219,19 @@ const SectionSettings = () => {
               <label htmlFor='alignItems'>Align:</label>
               <FormGroup variant='resize'>
                 <select
-                  value={props.alignItems}
+                  value={data.alignItems}
                   onChange={handleChange}
                   name='alignItems'
                   id='alignItems'
                 >
-                  {props.flexDirection === 'row' ? <Align /> : <Justify />}
+                  {data.flexDirection === 'row' ? <Align /> : <Justify />}
                 </select>
               </FormGroup>
             </FormItem>
             <FormItem>
               <label htmlFor='flexWrap'>Wrap:</label>
               <FormGroup variant='resize'>
-                <select
-                  value={props.flexWrap}
-                  onChange={handleChange}
-                  name='flexWrap'
-                  id='flexWrap'
-                >
+                <select value={data.flexWrap} onChange={handleChange} name='flexWrap' id='flexWrap'>
                   <option defaultValue='wrap'>wrap</option>
                   <option defaultValue='nowrap'>nowrap</option>
                 </select>
@@ -215,7 +246,7 @@ const SectionSettings = () => {
                   type='text'
                   name='background'
                   id='background'
-                  value={props.background}
+                  value={data.background}
                 />
               </FormGroup>
               {palette && (
@@ -227,7 +258,14 @@ const SectionSettings = () => {
                     color={color}
                     onChange={(color) => {
                       setColor;
-                      setProp((props) => (props.background = colorToRgba(color)));
+                      setProp((data) => (data.background = colorToRgba(color)));
+
+                      isDesktop &&
+                        setCustom((custom) => (custom.desktop['background'] = colorToRgba(color)));
+                      isTablet &&
+                        setCustom((custom) => (custom.tablet['background'] = colorToRgba(color)));
+                      isMobile &&
+                        setCustom((custom) => (custom.mobile['background'] = colorToRgba(color)));
                     }}
                   />
                 </Color>

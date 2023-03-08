@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Main } from './MainComponent.styles';
 import { useEditor, useNode } from '@craftjs/core';
-import SectionSettings from '../Container/SectionSettings';
-import { genProps } from '../Container/Container';
 import { useSelector } from 'react-redux';
 
 const MainComponent = ({ children, ...props }) => {
+  const dom = useRef(null);
   const { isDesktop, isTablet, isMobile } = useSelector((store) => ({
     isDesktop: store.isDesktop,
     isTablet: store.isTablet,
@@ -25,7 +24,7 @@ const MainComponent = ({ children, ...props }) => {
   }, [isDesktop, isMobile, isTablet]);
 
   return (
-    <Main view variant={(enabled || isActive) && 'selected'} ref={(ref) => connect(ref)} {...props}>
+    <Main variant={enabled ? 'selected' : 'enlarge'} ref={(ref) => connect(ref)} {...props}>
       {children}
     </Main>
   );
