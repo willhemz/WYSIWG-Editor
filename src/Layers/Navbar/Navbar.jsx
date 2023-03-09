@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { icons } from './icon';
 import { useEditor } from '@craftjs/core';
 import { useDispatch, useSelector } from 'react-redux';
-import { setDesktop, setLayer, setMobile, setPanel, setTablet } from '../../store';
+import { openPreview, setDesktop, setLayer, setMobile, setPanel, setTablet } from '../../store';
 
 const Navbar = () => {
   const { isMobile, isTablet, isDesktop, isLayer, isPanel } = useSelector((store) => ({
@@ -24,6 +24,7 @@ const Navbar = () => {
     if (title === 'open layer manager') dispatch(setLayer());
     if (title === 'open style manager') dispatch(setPanel());
     if (title === 'preview') {
+      dispatch(openPreview());
       actions.setOptions((options) => (options.enabled = !enabled));
       const data = query.serialize();
     }

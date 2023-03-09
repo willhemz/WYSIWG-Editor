@@ -6,6 +6,7 @@ const initialState = {
   isMobile: false,
   isPanel: true,
   isLayer: false,
+  isPreview: false,
   boxWidth: window.innerWidth,
 };
 
@@ -19,6 +20,8 @@ const editorSlice = createSlice({
     setPanel: (state) => ({ ...state, isPanel: true, isLayer: false }),
     setLayer: (state) => ({ ...state, isPanel: false, isLayer: true }),
     setWidth: (state, action) => ({ ...state, boxWidth: action.payload }),
+    openPreview: (state) => ({ ...state, isPreview: true }),
+    closePreview: (state) => ({ ...state, isPreview: false }),
   },
 });
 
@@ -26,5 +29,13 @@ export const store = configureStore({
   reducer: editorSlice.reducer,
 });
 
-export const { setDesktop, setTablet, setMobile, setLayer, setPanel, setWidth } =
-  editorSlice.actions;
+export const {
+  setDesktop,
+  setTablet,
+  setMobile,
+  setLayer,
+  setPanel,
+  setWidth,
+  openPreview,
+  closePreview,
+} = editorSlice.actions;
