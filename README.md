@@ -38,11 +38,24 @@ The properties of the editable elements are passed as props to their respective 
 
 ### Libraries
 
-1. **Craftjs**: used to set up the editor, frame, canvas and drag-n-drop functionality.
-2. **react-contenteditable**: used to set up editable elements and interact with the node properties.
-3. **react-colorful**: used to set up rgba color picker for the text color, backgrounds and borders.
-4. **React-hooks**: useState and useRef are used where necessary.
-5. **eslint**+**prettier**+**husky**: to set up syntax linting before pushing to the github repository.
+1. **@craftjs/core**: used to set up the editor, frame, canvas and drag-n-drop functionality.
+2. **@craftjs/layers**: used to create Layer component that display the nodetree.
+3. **fontawesome**: used in setting up icons utilized in the app development.
+4. **react-contenteditable**: used to set up editable elements and interact with the node properties.
+5. **react-colorful**: used to set up rgba color picker for the text color, backgrounds and borders.
+6. **@reduxjs/toolkit**: used to manage necessary states for app functionality.
+7. **react-redux**: to connect redux to app.
+8. **lzutf8**: used to copy and paste serialized json data.
+9. **React-hooks**: useState and useRef are used where necessary.
+10. **eslint**+**prettier**+**husky**: to set up syntax linting before pushing to the github repository.
+
+### Steps
+
+- Created a new react app with vite - `yarn create vite`.
+- Added necessary dependencies using `yarn add [package]`.
+- Set up **eslint**,**prettier** and **husky** for syntax control and error restraint.
+- In my terminal, launch app using `yarn dev`.
+- created `store.jsx` file, set up store using `configureStore` and `createSlice` from _redux-toolkit_\n dddd
 
 ### Getting Started
 
