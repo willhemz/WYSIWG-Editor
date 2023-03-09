@@ -19,7 +19,7 @@ All are just basic _React Components_ coupled few JavaScript Libraries. The app 
 The top bar is the navigation bar. You can select from a variety options which include: mobile view, tablet view, screen view, preview mode etc.
 
 **Left Bar**
-The left bar contain the web elements icon. These elements are `Section`, `Article`, `Div`, `Form`, `Input`, `Text` and `Button` elements each built as separate React component. A simple _drag-n-drop_ of any of the elements on the webpage creates a html reference of the dropped element.
+The left bar contain the web elements icon. These elements are ==Container== , ==Form==, ==Input==, ==Text== and --Button== elements each built as separate React component. A simple _drag-n-drop_ of any of the elements on the webpage creates a html reference of the dropped element.
 
 **Right Bar**
 The right bar is the Settings or Customization panel. Any selected item on the webpage can be customized in the settings panel.
@@ -55,7 +55,10 @@ The properties of the editable elements are passed as props to their respective 
 - Added necessary dependencies using `yarn add [package]`.
 - Set up **eslint**,**prettier** and **husky** for syntax control and error restraint.
 - In my terminal, launch app using `yarn dev`.
-- created `store.jsx` file, set up store using `configureStore` and `createSlice` from _redux-toolkit_\n dddd
+- created `store.jsx` file, set up initial state values and dispatch actions using `configureStore`\ and `createSlice` from _redux-toolkit_.
+- created two folders: _Components_ and _Layers_; the Components folder is the build folder for the\ 'drag-n-drop elements' while the Layers folder controls the user interface.
+- Created five folders inside the Components folder: _Button_,_CanvasBox_,_Container_,_Form_,_Input_ and _Text_.
+  -- d
 
 ### Getting Started
 
