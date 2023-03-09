@@ -7,9 +7,11 @@ const Canvas = () => {
   const {
     actions: { setOptions },
     enabled,
+    query,
   } = useEditor((store) => ({ enabled: store.options.enabled }));
+  const val = Object.keys(query.getNodes());
   return (
-    <CanvasPage variant={enabled ? 'selected' : 'enlarge'}>
+    <CanvasPage custom={val.length < 2 && 'height'} variant={enabled ? 'selected' : 'enlarge'}>
       <Frame>
         <Element is={Main} canvas />
       </Frame>
