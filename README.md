@@ -19,7 +19,7 @@ All are just basic _React Components_ coupled few JavaScript Libraries. The app 
 The top bar is the navigation bar. You can select from a variety options which include: mobile view, tablet view, screen view, preview mode etc.
 
 **Left Bar**
-The left bar contain the web elements icon. These elements are ==Container== , ==Form==, ==Input==, ==Text== and --Button== elements each built as separate React component. A simple _drag-n-drop_ of any of the elements on the webpage creates a html reference of the dropped element.
+The left bar contain the web elements icon. These elements are <mark>Container</mark> , <mark>Form</mark>, ==Input==, ==Text== and --Button== elements each built as separate React component. A simple _drag-n-drop_ of any of the elements on the webpage creates a html reference of the dropped element.
 
 **Right Bar**
 The right bar is the Settings or Customization panel. Any selected item on the webpage can be customized in the settings panel.
