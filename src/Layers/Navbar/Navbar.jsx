@@ -25,6 +25,7 @@ const Navbar = () => {
     if (title === 'open style manager') dispatch(setPanel());
     if (title === 'preview') {
       dispatch(openPreview());
+      dispatch(setDesktop());
       actions.setOptions((options) => (options.enabled = !enabled));
       const data = query.serialize();
     }
