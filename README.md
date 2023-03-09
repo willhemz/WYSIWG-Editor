@@ -19,7 +19,7 @@ All are just basic _React Components_ coupled few JavaScript Libraries. The app 
 The top bar is the navigation bar. You can select from a variety options which include: mobile view, tablet view, screen view, preview mode etc.
 
 **Left Bar**
-The left bar contain the web elements icon. These elements are <mark>Container</mark> , <mark>Form</mark>, ==Input==, ==Text== and --Button== elements each built as separate React component. A simple _drag-n-drop_ of any of the elements on the webpage creates a html reference of the dropped element.
+The left bar contain the web elements icon. These elements are `Container` , `Form`, `Input`, `Text` and `Button` elements each built as separate React component. A simple _drag-n-drop_ of any of the elements on the webpage creates a html reference of the dropped element.
 
 **Right Bar**
 The right bar is the Settings or Customization panel. Any selected item on the webpage can be customized in the settings panel.
@@ -58,7 +58,21 @@ The properties of the editable elements are passed as props to their respective 
 - created `store.jsx` file, set up initial state values and dispatch actions using `configureStore`\ and `createSlice` from _redux-toolkit_.
 - created two folders: _Components_ and _Layers_; the Components folder is the build folder for the\ 'drag-n-drop elements' while the Layers folder controls the user interface.
 - Created five folders inside the Components folder: _Button_,_CanvasBox_,_Container_,_Form_,_Input_ and _Text_.
-  -- d
+  - The Button element was designed and styled in the Button folder
+  - The CanvasBox is where the Main Element (outer canvas) was designed.
+  - Container folder for the Container Element.
+  - Form folder for the Form Element
+  - Similary Input and Text folders for Input and Text Element respectively.
+- The **drag-n-drop** functionality was done for each component using `useNode()` from _craftjs/core_ to set up **connector (connect,drag)**.
+- The Form Element and Container Element share the same settings node: **SectionSettings** as can be seen in their `.craft` method respectively.
+- In the Layers folder, we have two subfolders: **Navbar** and **Main**.
+  - Navbar folder: all about the navbar,screen navigations and external links
+  - Main: contains the web elements selector, the canvas which is the droppable region and the settings panel.
+  - The Editor is set up using **Editor, Frame and Element** from `craftjs/core`.
+  - Required element and editor properties are accessed and utilized through **useEditor and useNode** from `craftjs/core`.
+  - The preview functionality was set up using the _enabled prop_ from `useEditor` to control the Layout stylings.
+  - certain react hooks such as `useState`, `useRef` and `useEffect` are used where necessary especially match media styles in the preview state and on window resize.
+  - The form element has been set up to log to the console an object containing certain keys and values on submit.
 
 ### Getting Started
 
